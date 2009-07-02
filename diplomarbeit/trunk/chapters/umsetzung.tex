@@ -25,9 +25,10 @@ Um einen Eindruck von der Qualität der Genvorhersage zu gewinnen, wurden
 mehrere Trainings- und Vorhersage-Schritte mit einem Beispieldatensatz aus dem
 Conrad-Packet durchgeführt, deren Ergebnisse dann kreuzvalidiert wurden.
 Der Beispieldatensatz beinhaltete 574 Sequenzen von \texttt{Aspergillus niger},
-die dazu im Verhältnis 1:10 in zwei Datensätze A und B aufgeteilt wurden.
-Das Training erfolgte mit Datensatz B, die anschliessende Vorhersage wurde für
-beide Datensätze durchgeführt.
+die dazu im Verhältnis 1:10 in zwei Datensätze \enquote{testing} und
+\enquote{training} aufgeteilt wurden. Das Training erfolgte mit dem
+\enquote{training}-Datensatz, die anschliessende Vorhersage wurde für beide
+Datensätze durchgeführt.
 \index{Aspergillus niger}
 
 Das Ergebnis hieraus war also zum einen eine Vorhersage eben der Gene, mit
@@ -49,5 +50,20 @@ Sequenzen, der allerdings ein optimales Training vorrausgegangen war.
 	\end{center}
 	\label{fig:stateAgreement}
 \end{figure}
-
-
+\subsubsection{Conrad-local}
+\subsubsection{Conrad-lsf}
+\subsection{RepeatMasker}
+RepeatMasker
+(\htmladdnormallink{http://www.repeatmasker.org/}{http://www.repeatmasker.org/})
+ist ein Open Source Projekt, das repetetive Elemente einer Sequenz
+\enquote{maskiert}, um so Rauschen während ähnlichkeitsbasierter Suchen zu
+unterdrücken.
+Die Maskierung kann entweder durch das Ersetzten der betroffenen Sequenzen
+durch \enquote{N}'s bzw. \enquote{X}'s oder auch durch Ändern der Basen zur
+Kleinschreibweise erfolgen.
+Letzteres wird beispielsweise von \textit{BLAST} erkannt, was zur Folge hat,
+dass diese Sequenzabschnitte nicht in der Suche berücksichtigt werden.
+Die ursprüngliche Sequenzinformation bleibt auf diese Weise	erhalten.
+\subsubsection{RepeatMasker-local}
+\subsubsection{RepeatMasker-lsf}
+peter
