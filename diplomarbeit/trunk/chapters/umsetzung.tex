@@ -1,0 +1,19 @@
+\chapter{Umsetzung}
+\section{Design}
+\section{Module}
+\subsection{Conrad}
+Conrad \index{Conrad} ist
+ein \textit{de novo} \index{de novo} gene caller \index{gene caller},
+der Genstrukturen wie Exons und Introns vorhersagen kann.
+Die Vorhersage stützt sich dabei auf \textit{semi-Markow Conditional Random
+Fields} \index{Markow} \index{Conditional Random Fields}, kurz \textbf{CRF}.
+\index{CRF|see{Conditional Random Fields}}
+\\ Conrad benötigt für seine Genvorhersage eine FASTA-Datei mit einer oder
+mehreren zu analysierenden DNA-Sequenzen, sowie eine Binärdatei, die die
+Parameter für den CRF-Alorithmus entält.
+\\ Diese Binärdatei wird in einem
+Trainingslauf erstellt, der vor der eigentlichen Genvorhersage durchgeführt
+wird. Hierbei wird der CRF-Algorithmus auf die Eingabesequenz
+\enquote{trainiert}, um die Qualität der Genvorhersage zu maximieren.
+\\
+\htmladdnormallink{http://www.broadinstitute.org/annotation/conrad/}{http://www.broadinstitute.org/annotation/conrad/}
