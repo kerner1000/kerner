@@ -20,6 +20,10 @@ auf die Eingabesequenz trainiert, um die Qualität der Genvorhersage
 zu maximieren. Dieser Trainingslauf benötigt eine FASTA-Datei mit
 DNA-Sequenzen, die Gene enthalten, sowie eine GFF-Datei mit Annotationen zu
 diesen Genen.
+Die DNA-Sequenzen, die für das Training herangezogen werden, bestimmen direkt
+die Qualität der späteren Genvorhersage:
+Je \enquote{ähnlicher} die Trainingssequenzen den Sequenzen für die
+Vorhersage sind, desto genauer wird das Ergebnis.
 
 Um einen Eindruck von der Qualität der Genvorhersage zu gewinnen, wurden
 mehrere Trainings- und Vorhersage-Schritte mit einem Beispieldatensatz aus dem
@@ -33,7 +37,7 @@ Datensätze durchgeführt.
 
 Das Ergebnis hieraus war also zum einen eine Vorhersage eben der Gene, mit
 denen Conrad zuvor trainiert wurde, zum Anderen eine Vorhersage für unbekannte
-Sequenzen, der allerdings ein optimales Training vorrausgegangen war.
+Sequenzen, welcher allerdings ein optimales Training vorrausgegangen war.
 
 Das Ergebnis der Genvorhersage für die beiden Datensätze \enquote{training} und
 \enquote{testing} stellt sich wie folgt dar:
