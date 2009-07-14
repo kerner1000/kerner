@@ -24,6 +24,7 @@ Die DNA-Sequenzen, die für das Training herangezogen werden, bestimmen direkt
 die Qualität der späteren Genvorhersage:
 Je \enquote{ähnlicher} die Trainingssequenzen den Sequenzen für die
 Vorhersage sind, desto genauer wird das Ergebnis.
+\citep{doherty_gene_2007}
 
 Um einen Eindruck von der Qualität der Genvorhersage zu gewinnen, wurden
 mehrere Trainings- und Vorhersage-Schritte mit einem Beispieldatensatz aus dem
@@ -35,16 +36,34 @@ die dazu im Verhältnis 1:10 in zwei Datensätze \enquote{testing} und
 Datensätze durchgeführt.
 \index{Aspergillus niger}
 
-Das Ergebnis hieraus war also zum einen eine Vorhersage eben der Gene, mit
-denen Conrad zuvor trainiert wurde, zum Anderen eine Vorhersage für unbekannte
+Das Ergebnis hieraus war also zum einen eine Vorhersage für eben die Sequenzen,
+mit denen Conrad zuvor trainiert wurde, zum Anderen eine Vorhersage für unbekannte
 Sequenzen, welcher allerdings ein optimales Training vorrausgegangen war.
 
 Das Ergebnis der Genvorhersage für die beiden Datensätze \enquote{training} und
-\enquote{testing} stellt sich wie folgt dar:
+\enquote{testing} stellt sich wie folgt dar:\\
+Die Werte für den \enquote{training}-Datensatz sind generell relativ konstant,
+für den \enquote{testing}-Datensatz sind sie weiter gestreut.
+Diese Verteilung ist zu erwarten und zeigt ein ausgewogenes Training.
+Das bei einem Training oft auftretende \textit{over fitting} ist nicht
+festzustellen.
+\index{over fitting}
+Die Qualität der Genvorhersagen stellt sich in sechs Kategorien dar:
+\begin{description}
+\item[prediction sensitivity for coding exons] ist das Verhältnis
+der gefundenen Exons zu den tatsächlichen vorhandenen Exons.
+\item[prediction specificity for coding exons] \ldots
+\item[prediction sensitivity for coding nucleotides] \ldots
+\item[prediction specificity for coding nucleotides] \ldots
+\item[perfectly predicted sequences] ist das Verhältnis aller
+vollständig korrekt vorhergesagten Exons zu der Gesamtmenge an Exons.
+\item[nucleotide hidden state agreement] ist das Verhältnis der vorhergesagten
+Basen-\enquote{Zustände} zu den tatsächlichen Basen-Zuständen.
+\end{description}
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[scale=0.42]{pics/perfectm.jpg}
+		\includegraphics[scale=0.42]{pics/codingExons_sens.png}
 	\caption{something}
 	\end{center}
 	\label{fig:perfect}
@@ -52,11 +71,44 @@ Das Ergebnis der Genvorhersage für die beiden Datensätze \enquote{training} un
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[scale=0.42]{pics/stateAgreementm.jpg}
+		\includegraphics[scale=0.42]{pics/codingExons_spec.png}
 	\caption{something}
 	\end{center}
 	\label{fig:stateAgreement}
 \end{figure}
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[scale=0.42]{pics/codingNucleotides_sens.png}
+	\caption{something}
+	\end{center}
+	\label{fig:stateAgreement}
+\end{figure}
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[scale=0.42]{pics/codingNucleotides_spec.png}
+	\caption{something}
+	\end{center}
+	\label{fig:stateAgreement}
+\end{figure}
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[scale=0.42]{pics/perfect2.png}
+	\caption{something}
+	\end{center}
+	\label{fig:stateAgreement}
+\end{figure}
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[scale=0.42]{pics/agree2.png}
+	\caption{something}
+	\end{center}
+	\label{fig:stateAgreement}
+\end{figure}
+
 \subsubsection{Conrad-local}
 \subsubsection{Conrad-lsf}
 \subsection{RepeatMasker}
