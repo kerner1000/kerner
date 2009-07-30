@@ -25,32 +25,38 @@ nicht erforderlich.
 Das Framework bietet ausserdem eine globale \textbf{Service Registry}, an der
 Bundles sogenannte \textbf{Services} anmelden und abgefragen können.
 % OSGi Framework = OSGi Service Platform without OSGi Standard Services 13
+\citep{wtherich_die_2008}
 \index{Service Registry}
 \index{Service}
-\begin{figure}[ht]
+\begin{figure}[p]
 	\begin{center}
 		\includegraphics[scale=2]{pics/osgi_layer.png}
-	\caption{something}
+	\caption[OSGi layers]{
+	\textbf{OSGi layers.}
+	something}
 	\end{center}
-	\label{fig:perfect}
+	\label{fig:osgi_layer}
 \end{figure}
 \subsection{Bundles}
 Ein Bundle stellt technisch eine Einheit von Klassen und Ressourcen dar, die
 eigentständig in der Anwenung gestartet, gestoppt, installiert und
 deinstalliert werden können.
+\citep{wtherich_die_2008}
 % selbe version 17
-% importieren, exportieren 13 
+% importieren, exportieren 13,79
+% class loading 89
 % MANIFEST.MF 21
-% lebenszyklen 23
+% lebenszyklen 23,55
 % unterschied Bundle / Plug-In 41
-\subsection{Services}
+\subsection{Services} % 93
 Ein Service ist ein Java-Object, typischerweise ein Interface, das unter dem
 Interface-Namen an der Service Registry angemeldet wird.
 \index{Service Registry}
 Die Service Registry steht bundleübergreifend in der Anwendung zu Verfügung.
 Wird ein bestimmer Dienst von einem Bundle benötigt, kann dieser an der Service
-Registry abgefragt werden, ohne das im Enzelnen bekannt sein muss, welche
+Registry abgefragt werden, ohne dass im Enzelnen bekannt sein muss, welche
 Implementierung dahinter steckt oder welches Bundle diesen Dienst anbietet.
+\index{Bundle}
 % Services können kommen und gehen 23
 % Standard Services 13,25
 \citep{wtherich_die_2008}

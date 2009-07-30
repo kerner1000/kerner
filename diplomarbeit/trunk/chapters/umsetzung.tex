@@ -1,5 +1,37 @@
 \chapter{Umsetzung}
 \section{Design}
+Die Basis der Pipeline bildet das OSGi Framework, sowie eine Auswahl an
+Standard-Services.
+\index{Pipeline}
+\index{OSGi Framework}
+\index{Standard-Services}
+Folgende Bundles aus der OSGi Service Plattform werden zur Ausführung der
+Pipeline benötigt:
+\begin{itemize}
+  \item
+  \begin{verbatim}org.eclipse.osgi_3.4.0.v20080605-1900.jar\end{verbatim}
+  \item
+  \begin{verbatim}org.eclipse.equinox.common_3.4.0.v20080421-2006.jar\end{verbatim}
+  \item
+  \begin{verbatim}org.eclipse.equinox.log_1.1.0.v20080414.jar\end{verbatim}
+  \item
+  \begin{verbatim}org.eclipse.equinox.util_1.0.0.v20080414.jar\end{verbatim}
+  \item
+  \begin{verbatim}org.eclipse.osgi.services_3.1.200.v20071203.jar\end{verbatim}
+  \item
+  \begin{verbatim}org.eclipse.osgi.util_3.1.300.v20080303.jar\end{verbatim}
+\end{itemize}
+
+\begin{figure}[p]
+	\begin{center}
+		\includegraphics[scale=0.68]{pics/anna_folder_framework.jpg}
+	\caption[Application core]{
+	\textbf{Application core.}
+	something}
+	\end{center}
+	\label{fig:anna_folder_framework}
+\end{figure}
+
 \section{Module}
 \subsection{Conrad}
 Conrad
@@ -64,49 +96,61 @@ Basen-\enquote{Zustände} zu den tatsächlichen Basen-Zuständen.
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[scale=0.42]{pics/codingExons_sens.png}
-	\caption{something}
+	\caption[Prediction sensitivity for coding exons over 100 runs]{
+	\textbf{Prediction sensitivity for coding exons over 100 runs.}
+	something}
 	\end{center}
-	\label{fig:perfect}
+	\label{fig:codingExons_sens}
 \end{figure}
 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[scale=0.42]{pics/codingExons_spec.png}
-	\caption{something}
+	\caption[Prediction specificity for coding exons over 100 runs]{
+	\textbf{Prediction specificity for coding exons over 100 runs.}
+	something}
 	\end{center}
-	\label{fig:stateAgreement}
+	\label{fig:codingExons_spec}
 \end{figure}
 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[scale=0.42]{pics/codingNucleotides_sens.png}
-	\caption{something}
+	\caption[Prediction sensitivity for coding nucleotides over 100 runs]{
+	\textbf{Prediction sensitivity for coding nucleotides over 100 runs.}
+	something}
 	\end{center}
-	\label{fig:stateAgreement}
+	\label{fig:codingNucleotides_sens}
 \end{figure}
 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[scale=0.42]{pics/codingNucleotides_spec.png}
-	\caption{something}
+	\caption[Prediction specificity for coding nucleotides over 100 runs]{
+	\textbf{Prediction specificity for coding nucleotides over 100 runs.}
+	something}
 	\end{center}
-	\label{fig:stateAgreement}
+	\label{fig:codingNucleotides_spec}
 \end{figure}
 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[scale=0.42]{pics/perfect2.png}
-	\caption{something}
+	\caption[Perfectly predicted sequences over 100 runs]{
+	\textbf{Perfectly predicted sequences over 100 runs.}
+	something}
 	\end{center}
-	\label{fig:stateAgreement}
+	\label{fig:perfect2}
 \end{figure}
 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[scale=0.42]{pics/agree2.png}
-	\caption{something}
+	\caption[Nucleotide Hidden State Agreement over 100 runs]{
+	\textbf{Nucleotide Hidden State Agreement over 100 runs.}
+	something}
 	\end{center}
-	\label{fig:stateAgreement}
+	\label{fig:agree2}
 \end{figure}
 
 \subsubsection{Conrad-local}
