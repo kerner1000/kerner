@@ -1,0 +1,12 @@
+public interface Step {
+
+	boolean requirementsSatisfied(DataProxy data)
+	throws StepExecutionException;
+
+	boolean canBeSkipped(DataProxy data)
+	throws StepExecutionException;
+
+	boolean run(DataProxy data)
+	throws StepExecutionException;
+
+}

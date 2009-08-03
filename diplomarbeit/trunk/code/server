@@ -1,0 +1,19 @@
+public interface Server {
+
+	final static String PROPERTIES_KEY_PREFIX =
+	"anna.server.";
+	final static String WORKING_DIR_KEY =
+	PROPERTIES_KEY_PREFIX + "workingdir";
+
+	void registerStep(AbstractStep step);
+
+	void unregisterStep(AbstractStep step);
+
+	Properties getServerProperties();
+
+	StepStateObserver getStepStateObserver();
+	
+	AbstractServiceProvider<DataProxy>
+	getDataProxyProvider();
+
+}
