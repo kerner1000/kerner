@@ -105,6 +105,8 @@
 \lstset{numbers=left, numberstyle=\small, language=Java}
 
 \newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\first}[1]{\textbf{#1}}
+\newcommand{\name}[1]{\textit{#1}}
 
 %
 %  1. Index erzeugen.
@@ -116,3 +118,22 @@
 
 \hyphenation{App-li-cation-Frame-work}
 \hyphenation{Pipe-line}
+
+\makeatletter 
+\@ifundefined{float@listhead}{}{% 
+\renewcommand*{\lstlistoflistings}{% 
+\begingroup 
+\if@twocolumn 
+\@restonecoltrue\onecolumn 
+\else 
+\@restonecolfalse 
+\fi 
+\float@listhead{\lstlistlistingname}% 
+\setlength{\parskip}{\z@}% 
+\setlength{\parindent}{\z@}% 
+\setlength{\parfillskip}{\z@ \@plus 1fil}% 
+\@starttoc{lol}% 
+\if@restonecol\twocolumn\fi 
+\endgroup 
+}% 
+} 

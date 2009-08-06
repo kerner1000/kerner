@@ -1,8 +1,45 @@
+% 2009-08-05
+
 \chapter{Zielsetzung}
 Das Max-Planck Institut für Züchtungsforschung in Köln hatte bisher keine
 eigene Pipeline zur Verfügung, um anfallende Genom-Annotationen eigenständig
 durchführen zu können. Problemstellungen dieser Art wurden bis dahin von
 Personen außerhalb des Institutes durchgeführt.
+\index{Pipeline|see{Annotationspipeline}}
+\index{Annotation}
+
 Ziel dieser Arbeit war es daher, eine Annotationspipeline zu entwerfen, die
 innerhalb des Institutes verfügbar ist. Neben der unmittelbaren Verfügbarkeit
-\section{LSF}
+der Pipeline standen hier verschiedene technische Anforderungen im Vordergrund:
+\index{Annotationspipeline}
+
+Die Pipeline soll generell modular und möglichst generisch strukturiert sein.
+Auf diese Weise soll zum einen ermöglicht werden, die Software mit vertretbarem
+Aufwand für verschiedene Anforderungen und Einsatzumgebungen zu konfigurieren,
+zum Anderen soll die Software möglichst einfach mit zusätzlichen Funktionen
+erweiterbar sein.
+Zu diesem Zweck soll die Pipeline über ein \first{Plug-in} System verfügen, in
+dem Funktionalität über Plug-ins hinzugefügt und konfiguriert werden kann.
+\index{Plug-in}
+Durch eine entsprechende  Modularisierung wird der Annotationsprozess
+ausschließlich über die Menge der genutzten Plug-ins definiert und
+konfiguriert.
+Der versierte Nutzer kann das System durch das Erstellen eigener Plug-ins um
+weitere Verarbeitungsschritte oder andere Funktionen erweitern.
+
+Das Institut verfügt über einen eigenen compute cluster, auf dem sehr zeit- und
+ressourcenintensive Prozesse ausgeführt werden können.
+\footnote{Load Sharing Facility, \textbf{LSF}, ist ein propritärer job scheduler
+der Firma Platform Computing. Er wird genutzt, um batch jobs in einem Unix oder
+Windows basiertem Netzwerk auf verschiedene Arbeitsstationen zu
+verteilen.\citep{ault_oracle_2004}\htmladdnormallink{Platform LSF}
+{http://www.platform.com/Products/platform-lsf}}
+\index{LSF|see{Platform LSF}}
+\index{Platform LSF}
+\index{compute cluster|see{Platform LSF}}
+Die Pipeline soll in der Lage sein, einzelne oder mehrere Prozesse auf dem
+compute cluster auszuführen, um lokalen Ressourcen möglichst wenig zu
+belasten. Der Gebrauch des clusters soll hierbei aber optional sein, um die
+Portierbarkeit der Pipeline nicht unnötig einzuschränken.
+\index{Pipeline}
+

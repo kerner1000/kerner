@@ -1,25 +1,42 @@
-\indexentry{OSGi Alliance|hyperpage}{11}
-\indexentry{OSGi|see{OSGi Alliance}}{11}
-\indexentry{Open Services Gateway|see{OSGi Alliance}}{11}
-\indexentry{OSGi Service Platform|hyperpage}{11}
-\indexentry{Bundle|hyperpage}{11}
+\indexentry{Pipeline|see{Annotationspipeline}}{9}
+\indexentry{Annotation|hyperpage}{9}
+\indexentry{Annotationspipeline|hyperpage}{9}
+\indexentry{Plug-in|hyperpage}{9}
+\indexentry{LSF|see{Platform LSF}}{9}
+\indexentry{Platform LSF|hyperpage}{9}
+\indexentry{compute cluster|see{Platform LSF}}{9}
+\indexentry{Pipeline|hyperpage}{9}
+\indexentry{Application Framework|hyperpage}{10}
+\indexentry{Equinox|hyperpage}{10}
+\indexentry{OSGi|hyperpage}{10}
+\indexentry{OSGi Framework|see{OSGi}}{10}
+\indexentry{Eclipse|hyperpage}{10}
+\indexentry{OSGi Alliance|hyperpage}{10}
+\indexentry{OSGi|see{OSGi Alliance}}{10}
+\indexentry{Open Services Gateway|see{OSGi Alliance}}{10}
+\indexentry{OSGi Service Platform|hyperpage}{10}
+\indexentry{Bundle|hyperpage}{10}
+\indexentry{Dienst|hyperpage}{11}
+\indexentry{Registry|see{Service Registry}}{11}
 \indexentry{Service Registry|hyperpage}{11}
 \indexentry{Service|hyperpage}{11}
-\indexentry{Service Registry|hyperpage}{11}
 \indexentry{Bundle|hyperpage}{11}
-\indexentry{Pipeline|hyperpage}{13}
-\indexentry{OSGi Framework|hyperpage}{13}
-\indexentry{Standard-Services|hyperpage}{13}
-\indexentry{Server|see{Pipeline-Server}}{14}
-\indexentry{Pipeline-Server|hyperpage}{14}
-\indexentry{Data Proxy|hyperpage}{14}
-\indexentry{OSGi Service|hyperpage}{14}
-\indexentry{DataBean|hyperpage}{14}
-\indexentry{Conrad|hyperpage}{15}
-\indexentry{de novo|hyperpage}{15}
-\indexentry{gene caller|hyperpage}{15}
-\indexentry{Markow|hyperpage}{15}
-\indexentry{Conditional Random Fields|hyperpage}{15}
-\indexentry{CRF|see{Conditional Random Fields}}{15}
-\indexentry{Aspergillus niger|hyperpage}{15}
-\indexentry{over fitting|hyperpage}{15}
+\indexentry{MANIFEST.MF|hyperpage}{11}
+\indexentry{Service Registry|hyperpage}{13}
+\indexentry{Bundle|hyperpage}{13}
+\indexentry{Pipeline|hyperpage}{14}
+\indexentry{OSGi Framework|hyperpage}{14}
+\indexentry{Standard-Services|hyperpage}{14}
+\indexentry{Server|see{Pipeline-Server}}{15}
+\indexentry{Pipeline-Server|hyperpage}{15}
+\indexentry{Data Proxy|hyperpage}{15}
+\indexentry{OSGi Service|hyperpage}{15}
+\indexentry{DataBean|hyperpage}{15}
+\indexentry{Conrad|hyperpage}{16}
+\indexentry{de novo|hyperpage}{16}
+\indexentry{gene caller|hyperpage}{16}
+\indexentry{Markow|hyperpage}{16}
+\indexentry{Conditional Random Fields|hyperpage}{16}
+\indexentry{CRF|see{Conditional Random Fields}}{16}
+\indexentry{Aspergillus niger|hyperpage}{16}
+\indexentry{over fitting|hyperpage}{16}
