@@ -160,5 +160,52 @@ Benutzerverwaltung, HTTP oder Datenbankanbindung realisiert.
 \index{OSGi Service Platform}
 % Standard Services 13,25
 \citep{wtherich_die_2008}
+
 \section{Design}
+Das Design der Annotationspipeline soll sich an dem \first{Client-Server-Modell}
+\footnote{Client-Server-Modell bla bla} orientieren:
+\index{Annotationspipeline}
+\index{Client-Server-Modell}
+Die Basis der Pipeline stellt ein \first{Server} dar, an dem sich
+\first{Clients} anmelden können.
+Clients, oder auch \first{Steps}, sind dabei einzelne Verarbeitungsschritte der
+Pipeline, die durch den Server zur Ausführung gebracht werden.
+\index{Server}
+\index{Client}
+\index{Step}
+
+\subsection{Server}
+Die Anforderungen an den Server gliedern sich in zwei Teilbereiche:
+\begin{description}
+\item[Organisation und Synchronisation der Client Ausführung]
+Die Ausfürhrung der angemeldeten Steps kann sequenziell oder
+parallel erfolgen, je nachdem, welche \first{execution preconditions}
+\footnote{execution precondition bla bla} für den jeweiligen Step
+erforderlich sind und ob die zur Ausführung benötigten Daten eventuell erst
+durch einen anderen Step bereitgestellt werden müssen. Vor der eigentlichen
+Ausführung wird der Server somit zum einen die \name{execution preconditions}
+prüfen, zum anderen, ob der Step überhaupt zur Ausführung
+gebracht werden muss, oder ob die zu erwartenden Ergebnisse bereits in selber
+oder in anderer Form vorhanden sind.
+\item[Datenverwaltung] Die Ergebnisse der einzelnen Steps werden zentral durch
+den Server verwaltet.
+Zum einen synchronisiert der Server die Zugriffe auf die Daten, zum anderen
+werden diese persistiert, um bei einer gewollten oder ungewollten Unterbrechung
+der Pipeline Datenverlust zu verhindern.
+\end{description}
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[scale=0.6]{pics/programOrganisationOverview3ScaledWithAlpha.jpg}
+	\caption[Design 1]{
+	\textbf{Design 1.}
+	something}
+	\end{center}
+	\label{fig:programOrganisationOverview3ScaledWithAlpha}
+\end{figure}
+
+\subsection{Client}
+Clientseitig sollen in der Pipeline die \first{Steps} stehen.
+Unter einem \name{Step} soll dabei allgemein eine einzelne Komponente der
+Pipeline stehen.
 \section{Genvorhersage}
