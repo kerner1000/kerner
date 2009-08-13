@@ -84,10 +84,9 @@ von Klassen und Ressourcen, die eigentständig in der Anwenung gestartet,
 gestoppt, installiert und deinstalliert werden kann.
 \index{Bundle}
 
-Ressourcen und Klassen
-eines Bundles können anderen Bundles bereitgestellt werden. Dazu müssen sie vom
-bereitstellenden Bundle explizit exportiert werden und durch das nutzende
-Bundle explizit importiert werden. Jedes Bundle stellt einen
+Ressourcen und Klassen eines Bundles können anderen Bundles bereitgestellt
+werden. Dazu müssen sie vom bereitstellenden Bundle explizit exportiert werden
+und durch das nutzende Bundle explizit importiert werden. Jedes Bundle stellt einen
 Bundlenamen, der üblicherweise von der enthaltenen Paketstruktur
 abgeleitet wird, sowie eine Versionsnummer bereit. Aus diesen beiden Komponenten
 wird dann eine eindeutige Identifizierung des Bundles generiert.
@@ -162,26 +161,73 @@ Benutzerverwaltung, HTTP oder Datenbankanbindung realisiert.
 \citep{wtherich_die_2008}
 
 \section{Design}
-Das Design der Annotationspipeline soll sich an dem \first{Client-Server-Modell}
+Die Architektur der Software soll sich durch verschiedene Abstraktionebenen
+darstellen lassen. \todo{hier könnte es etwas mehr sein}
+
+\subsection{Pipes and Filters}
+Die höchste Abstraktion stellt das \first{Pipes and
+Filters}-Patten dar:
+\footnote{pipes and filters bla bla}
+\index{Pipes and Filters}
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[scale=0.7]{pics/pipesFilter3.png}
+	\caption[Pipes and Filter]{
+	\textbf{pipesFilter.}
+	something}
+	\end{center}
+	\label{fig:pipesFilter}
+\end{figure}
+
+Die zu annotierende Sequenz wird schrittweise durch verschiedene \first{Filter}
+bearbeitet. Jeder Filter, der in der Pipeline vorhanden ist, wird dabei das
+entgültige Ergebnis der Annotation durch seine spezifischen Ergebnisse
+erweitern.
+
+Der Input eines Filters besteht dabei zum einen aus der zu
+annotierenden Sequenz selbst, zum anderen aus einem zentralen Datenobjekt, in
+dem alle gewonnenen Ergebnisse abgespeichert werden.
+Ein Filter kann dabei auch auf die Ergebnisse eines anderen
+Filters angewiesen sein. Die Reihenfolge der Filter innerhalb der Pipeline wird
+somit durch die spezifischen \first{execution preconditions} aller
+Filter festgelegt.
+\footnote{execution precondition bla bla}
+\index{Filter}
+\index{execution precondition}
+
+Es ist davon auszugehen, dass die Ausführung einzelner Filter mitunter sehr
+zeitintensiv sein wird. Ausserdem soll Nutzen aus dem im Institut installierten
+\first{LSF} gezogen werden. Daher wird eine rein sequenzielle Abfolge der
+Filter, wie es das Entwursmuster suggeriert, vermieden werden.
+Stattdessen kann die Ausführung einzelner Filter parallel erfolgen.
+Sind zu einem Zeitpunkt die execution preconditions mehrerer Filter erfüllt,
+werden diese sofort zur Ausführung gebracht.
+\index{Platform LSF}
+
+\subsection{Client-Server-Konzept}
+Um dem Anspruch der Paralelisierung gerecht zu werden und die execution
+preconditions einzelner Filter entsprechend zu verwalten, soll die Pipeline
+ausserdem an dem \first{Client-Server-Modell}
 \footnote{Client-Server-Modell bla bla} orientieren:
 \index{Annotationspipeline}
 \index{Client-Server-Modell}
+\todo{Abstraktionsebene?}
 Die Basis der Pipeline stellt ein \first{Server} dar, an dem sich
 \first{Clients} anmelden können.
-Clients, oder auch \first{Steps}, sind dabei einzelne Verarbeitungsschritte der
+Clients, oder auch \first{Steps}, sind dabei die einzelnen Filter der
 Pipeline, die durch den Server zur Ausführung gebracht werden.
 \index{Server}
 \index{Client}
 \index{Step}
 
-\subsection{Server}
+\subsubsection{Server}
 Die Anforderungen an den Server gliedern sich in zwei Teilbereiche:
 \begin{description}
 \item[Organisation und Synchronisation der Client Ausführung]
 Die Ausfürhrung der angemeldeten Steps kann sequenziell oder
-parallel erfolgen, je nachdem, welche \first{execution preconditions}
-\footnote{execution precondition bla bla} für den jeweiligen Step
-erforderlich sind und ob die zur Ausführung benötigten Daten eventuell erst
+parallel erfolgen, je nachdem, welche \first{execution preconditions} für den
+jeweiligen Step erforderlich sind und ob die zur Ausführung benötigten Daten eventuell erst
 durch einen anderen Step bereitgestellt werden müssen. Vor der eigentlichen
 Ausführung wird der Server somit zum einen die \name{execution preconditions}
 prüfen, zum anderen, ob der Step überhaupt zur Ausführung
@@ -204,8 +250,16 @@ der Pipeline Datenverlust zu verhindern.
 	\label{fig:programOrganisationOverview3ScaledWithAlpha}
 \end{figure}
 
-\subsection{Client}
+\subsubsection{Client}
 Clientseitig sollen in der Pipeline die \first{Steps} stehen.
 Unter einem \name{Step} soll dabei allgemein eine einzelne Komponente der
 Pipeline stehen.
+
 \section{Genvorhersage}
+
+
+
+
+
+
+ 
