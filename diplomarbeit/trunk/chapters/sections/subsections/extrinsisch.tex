@@ -1,0 +1,61 @@
+\subsection{extrinsisch \todo{geklaut von BPS}}
+Die extrinsische Genvorhersage versucht, Gene oder Genkomponenten aufgrund von
+Sequenzähnlichkeiten zu bereits bekannten Genen zu identifizieren.
+\index{extrinsisch}
+\index{Genvorhersage}
+Dazu können verschiedene Datenbanken angefragt werden, wie z.B. \name{GenBank}.
+Dabei können Vergleiche auf unterschiedlichen Ebenen herangezogen werden:
+Zum einen der direkte Vergleich der genomischen Sequenz, also der eigentlichen
+Basenabfolge, zum anderen kann die Basenabfolge in das daraus potentiell
+resultierende Proteinprodukt übersetzt werden, mit welchem dann der eigentliche
+Vergleich angestellt wird.
+
+Ein großer Vorteil der extrinsischen Genvorhersage besteht darin, dass, wenn ein
+signifikant ähnliches Gen gefunden wurde, diesem oft schon eine bestimmte
+Funktion zugeordnet ist, die dann gegebenenfalls übernommen werden kann.
+\index{extrinsisch}
+\index{Genvorhersage}
+Die funktionelle Annotation, also die Bestimmung der biologischen Funktion des
+Gens, wird so schon teilweise abgedeckt.
+\index{Annotation!funktionell}
+Des weiteren sind Sequenzvergleiche auf Basis der Aminosäuresequenz im
+Gegensatz zu Vergleichen auf Basis der genomischen Sequenz oftmals robuster
+aufgrund von fehlendem Rauschen durch funktionsneutrale Nucleotid-Mutationen.
+\index{Sequenzvergleich}
+
+Der offensichtliche Nachteil der extrinsischen Genvorhersage besteht darin, dass
+sie extensiell von den verfügbaren Datensätzen abhängt.
+Ist bisher kein Gen bekannt, das Ähnlichkeit zu einem auf der zu annotierenden
+Sequenz vorhandenen Gen aufweist, kann dessen Existenz durch die extrinsische
+Annotation nicht aufgedeckt werden.
+
+Die Sensitivität der extrinsischen sowie der funktionellen Annotation im
+speziellen, kann deutlich verbessert werden, wenn eine musterbasierte, auch
+patternbasierte Suche eingeschlossen wird.
+\index{Suche!patternbasiert}
+\index{Sensitivität}
+\index{Annotation!funktionell}
+\index{extrinsisch}
+\index{musterbasiert}
+\index{patternbasiert|see{musterbasiert}}
+Die Proteinfunktion definiert sich maßgeblich über die auf dem Protein
+enthaltenen Domänen.
+\index{Domäne|see{Proteindomäne}}
+\index{Proteindomäne}
+Werden z.B. diese Domänen in Pattern übersetzt und in einer entsprechenden
+Datenbank bereitgestellt, kann eine vergleichende Suche gegen diese Pattern
+durchgeführt werden.
+\index{Pattern}
+\index{Domäne}
+Eine ebensolche Datenbank ist \name{InterPro}, die über das Internet
+erreichbar ist.
+\index{Datenbank}
+\index{InterPro}
+Hier können Sequenzen auf in der Datenbank enthaltene Pattern
+durchsucht werden und so potentiell enthaltene Domänen aufgespürt werden.
+Diese patternbasierte Suche ist allerdings sehr zeitaufwändig und daher für
+längere Sequenzen > 1kbp ineffzient.
+\index{Suche!patternbasiert}
+Für die Verifizierung und Spezifizierung bereits aufgeklärter Genstrukturen ist
+die patternbasierte Suche trotzdem sehr gut geeignet.
+\citep{pmid16749184}

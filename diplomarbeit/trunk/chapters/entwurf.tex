@@ -190,9 +190,8 @@ annotierenden Sequenz selbst, zum anderen aus einem zentralen Datenobjekt, in
 dem alle gewonnenen Ergebnisse abgespeichert werden.
 Ein Filter kann dabei auch auf die Ergebnisse eines anderen
 Filters angewiesen sein. Die Reihenfolge der Filter innerhalb der Pipeline wird
-somit durch die spezifischen \first{execution preconditions} aller
-Filter festgelegt.
-\footnote{execution precondition bla bla}
+somit durch die spezifischen \first{execution preconditions}
+\footnote{execution precondition bla bla} aller Filter festgelegt.
 \index{Filter}
 \index{execution precondition}
 
@@ -202,12 +201,12 @@ zeitintensiv sein wird. Ausserdem soll Nutzen aus dem im Institut installierten
 Filter, wie es das Entwursmuster suggeriert, vermieden werden.
 Stattdessen kann die Ausführung einzelner Filter parallel erfolgen.
 Sind zu einem Zeitpunkt die execution preconditions mehrerer Filter erfüllt,
-werden diese sofort zur Ausführung gebracht.
+werden alle sofort zur Ausführung gebracht.
 \index{Platform LSF}
 
 \subsection{Client-Server-Konzept}
 Um dem Anspruch der Paralelisierung gerecht zu werden und die execution
-preconditions einzelner Filter entsprechend zu verwalten, soll die Pipeline
+preconditions einzelner Filter entsprechend zu verwalten, soll sich die Pipeline
 ausserdem an dem \first{Client-Server-Modell}
 \footnote{Client-Server-Modell bla bla} orientieren:
 \index{Annotationspipeline}
@@ -240,6 +239,28 @@ werden diese persistiert, um bei einer gewollten oder ungewollten Unterbrechung
 der Pipeline Datenverlust zu verhindern.
 \end{description}
 
+\subsubsection{Client}
+Auf der Clientseite stehen die einzelnen \first{Filter} der Pipeline, im
+folgenden \first{Steps} genannt. Jeder Step soll technisch gesehen einem oder
+mehreren OSGi-Bundles entsprechen.
+\index{Step}
+\index{Filter}
+\index{Client}
+\index{Bundle}
+\index{OSGi-Bundle}
+Wird das Bundle durch das OSGi-Framework gestartet, soll sich der Step am Server
+anmelden. Der Step stellt dabei entsprechende \name{call-back-Methoden} für die
+eigentliche Ausführung, Überprüfung der \name{execution preconditions} und
+Ähnlichem bereit.
+\index{Server}
+\index{OSGi Framework}
+\index{call back method}
+Wann diese Methoden aufgerufen werden, obliegt so allein
+dem Server.
+Als Prameter der call back methoden wird die Sequenz, sowie das zentrale
+Datenobjekt, im Folgenden \first{Data bean}\todo{namen früher geben} genannt,
+übergeben.
+
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[scale=0.6]{pics/programOrganisationOverview3ScaledWithAlpha.jpg}
@@ -249,11 +270,6 @@ der Pipeline Datenverlust zu verhindern.
 	\end{center}
 	\label{fig:programOrganisationOverview3ScaledWithAlpha}
 \end{figure}
-
-\subsubsection{Client}
-Clientseitig sollen in der Pipeline die \first{Steps} stehen.
-Unter einem \name{Step} soll dabei allgemein eine einzelne Komponente der
-Pipeline stehen.
 
 \section{Genvorhersage}
 

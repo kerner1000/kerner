@@ -1,53 +1,111 @@
-\indexentry{Pipeline|see{Annotationspipeline}}{9}
-\indexentry{Annotation|hyperpage}{9}
-\indexentry{Annotationspipeline|hyperpage}{9}
-\indexentry{Plug-in|hyperpage}{9}
-\indexentry{LSF|see{Platform LSF}}{9}
-\indexentry{Platform LSF|hyperpage}{9}
-\indexentry{compute cluster|see{Platform LSF}}{9}
-\indexentry{Pipeline|hyperpage}{9}
-\indexentry{Application Framework|hyperpage}{10}
-\indexentry{Equinox|hyperpage}{10}
-\indexentry{OSGi|hyperpage}{10}
-\indexentry{OSGi Framework|see{OSGi}}{10}
-\indexentry{Eclipse|hyperpage}{10}
-\indexentry{OSGi Alliance|hyperpage}{10}
-\indexentry{OSGi|see{OSGi Alliance}}{10}
-\indexentry{Open Services Gateway|see{OSGi Alliance}}{10}
-\indexentry{OSGi Service Platform|hyperpage}{10}
-\indexentry{Bundle|hyperpage}{10}
-\indexentry{Dienst|hyperpage}{11}
-\indexentry{Registry|see{Service Registry}}{11}
-\indexentry{Service Registry|hyperpage}{11}
-\indexentry{Service|hyperpage}{11}
-\indexentry{Bundle|hyperpage}{11}
-\indexentry{MANIFEST.MF|hyperpage}{12}
-\indexentry{Service Registry|hyperpage}{12}
+\indexentry{Open Reading Frame|hyperpage}{8}
+\indexentry{ORF|see{Open Reading Frame}}{8}
+\indexentry{Start Codon|hyperpage}{8}
+\indexentry{Stop Codon|hyperpage}{8}
+\indexentry{Splice Site|hyperpage}{8}
+\indexentry{Intron|hyperpage}{8}
+\indexentry{Exon|hyperpage}{8}
+\indexentry{Hidden Markov Model|hyperpage}{8}
+\indexentry{HMM|see{Hidden Markov Model}}{8}
+\indexentry{Zustand|hyperpage}{8}
+\indexentry{Ausgabesymbol|hyperpage}{8}
+\indexentry{Zust\IeC {\"a}nde|hyperpage}{9}
+\indexentry{verborgener Zust\IeC {\"a}nde|see{Zust\IeC {\"a}nde}}{9}
+\indexentry{Ausgabesymbol|hyperpage}{9}
+\indexentry{Beobachtung|hyperpage}{9}
+\indexentry{Wahrscheinlichkeiten!\IeC {\"U}bergangs|hyperpage}{9}
+\indexentry{Wahrscheinlichkeiten!Beobachtungs|hyperpage}{9}
+\indexentry{de novo|hyperpage}{9}
+\indexentry{HMM|hyperpage}{9}
+\indexentry{GHMM|see{Generalized Hidden Markow Model}}{9}
+\indexentry{Generalized Hidden Markow Model|hyperpage}{9}
+\indexentry{Intron|hyperpage}{9}
+\indexentry{Exon|hyperpage}{9}
+\indexentry{Splice Site|hyperpage}{9}
+\indexentry{Zust\IeC {\"a}nde|hyperpage}{9}
+\indexentry{Wahrscheinlichkeit!\IeC {\"U}bergangs|hyperpage}{9}
+\indexentry{Wichtungs-Matrix|hyperpage}{9}
+\indexentry{Wahrscheinlichkeit!Auftritts|hyperpage}{9}
+\indexentry{Alogrithmus|hyperpage}{9}
+\indexentry{Training|hyperpage}{9}
+\indexentry{Matrix|see{Wichtungs-Matrix}}{9}
+\indexentry{extrinsisch|hyperpage}{10}
+\indexentry{Genvorhersage|hyperpage}{10}
+\indexentry{extrinsisch|hyperpage}{10}
+\indexentry{Genvorhersage|hyperpage}{10}
+\indexentry{Annotation!funktionell|hyperpage}{10}
+\indexentry{Sequenzvergleich|hyperpage}{10}
+\indexentry{Suche!patternbasiert|hyperpage}{10}
+\indexentry{Sensitivit\IeC {\"a}t|hyperpage}{10}
+\indexentry{Annotation!funktionell|hyperpage}{10}
+\indexentry{extrinsisch|hyperpage}{10}
+\indexentry{musterbasiert|hyperpage}{10}
+\indexentry{patternbasiert|see{musterbasiert}}{10}
+\indexentry{Dom\IeC {\"a}ne|see{Proteindom\IeC {\"a}ne}}{10}
+\indexentry{Proteindom\IeC {\"a}ne|hyperpage}{10}
+\indexentry{Pattern|hyperpage}{10}
+\indexentry{Dom\IeC {\"a}ne|hyperpage}{10}
+\indexentry{Datenbank|hyperpage}{10}
+\indexentry{InterPro|hyperpage}{10}
+\indexentry{Suche!patternbasiert|hyperpage}{10}
+\indexentry{Pipeline|see{Annotationspipeline}}{11}
+\indexentry{Annotation|hyperpage}{11}
+\indexentry{Annotationspipeline|hyperpage}{11}
+\indexentry{Plug-in|hyperpage}{11}
+\indexentry{LSF|see{Platform LSF}}{11}
+\indexentry{Platform LSF|hyperpage}{11}
+\indexentry{compute cluster|see{Platform LSF}}{11}
+\indexentry{Pipeline|hyperpage}{11}
+\indexentry{Application Framework|hyperpage}{12}
+\indexentry{Equinox|hyperpage}{12}
+\indexentry{OSGi|hyperpage}{12}
+\indexentry{OSGi Framework|see{OSGi}}{12}
+\indexentry{Eclipse|hyperpage}{12}
+\indexentry{OSGi Alliance|hyperpage}{12}
+\indexentry{OSGi|see{OSGi Alliance}}{12}
+\indexentry{Open Services Gateway|see{OSGi Alliance}}{12}
+\indexentry{OSGi Service Platform|hyperpage}{12}
 \indexentry{Bundle|hyperpage}{12}
-\indexentry{Service Interface|hyperpage}{12}
-\indexentry{OSGi Service Platform|hyperpage}{13}
-\indexentry{Pipes and Filters|hyperpage}{13}
-\indexentry{Filter|hyperpage}{14}
-\indexentry{execution precondition|hyperpage}{14}
-\indexentry{Platform LSF|hyperpage}{14}
-\indexentry{Annotationspipeline|hyperpage}{14}
-\indexentry{Client-Server-Modell|hyperpage}{14}
-\indexentry{Server|hyperpage}{14}
-\indexentry{Client|hyperpage}{14}
-\indexentry{Step|hyperpage}{14}
-\indexentry{Pipeline|hyperpage}{17}
+\indexentry{Dienst|hyperpage}{13}
+\indexentry{Registry|see{Service Registry}}{13}
+\indexentry{Service Registry|hyperpage}{13}
+\indexentry{Service|hyperpage}{13}
+\indexentry{Bundle|hyperpage}{13}
+\indexentry{MANIFEST.MF|hyperpage}{14}
+\indexentry{Service Registry|hyperpage}{14}
+\indexentry{Bundle|hyperpage}{14}
+\indexentry{Service Interface|hyperpage}{14}
+\indexentry{OSGi Service Platform|hyperpage}{15}
+\indexentry{Pipes and Filters|hyperpage}{15}
+\indexentry{Filter|hyperpage}{16}
+\indexentry{execution precondition|hyperpage}{16}
+\indexentry{Platform LSF|hyperpage}{16}
+\indexentry{Annotationspipeline|hyperpage}{16}
+\indexentry{Client-Server-Modell|hyperpage}{16}
+\indexentry{Server|hyperpage}{16}
+\indexentry{Client|hyperpage}{16}
+\indexentry{Step|hyperpage}{16}
+\indexentry{Step|hyperpage}{17}
+\indexentry{Filter|hyperpage}{17}
+\indexentry{Client|hyperpage}{17}
+\indexentry{Bundle|hyperpage}{17}
+\indexentry{OSGi-Bundle|hyperpage}{17}
+\indexentry{Server|hyperpage}{17}
 \indexentry{OSGi Framework|hyperpage}{17}
-\indexentry{Standard-Services|hyperpage}{17}
-\indexentry{Server|see{Pipeline-Server}}{18}
-\indexentry{Pipeline-Server|hyperpage}{18}
-\indexentry{Data Proxy|hyperpage}{18}
-\indexentry{OSGi Service|hyperpage}{18}
-\indexentry{DataBean|hyperpage}{18}
-\indexentry{Conrad|hyperpage}{19}
-\indexentry{de novo|hyperpage}{19}
-\indexentry{gene caller|hyperpage}{19}
-\indexentry{Markow|hyperpage}{19}
-\indexentry{Conditional Random Fields|hyperpage}{19}
-\indexentry{CRF|see{Conditional Random Fields}}{19}
-\indexentry{Aspergillus niger|hyperpage}{19}
-\indexentry{over fitting|hyperpage}{19}
+\indexentry{call back method|hyperpage}{17}
+\indexentry{Pipeline|hyperpage}{19}
+\indexentry{OSGi Framework|hyperpage}{19}
+\indexentry{Standard-Services|hyperpage}{19}
+\indexentry{Server|see{Pipeline-Server}}{20}
+\indexentry{Pipeline-Server|hyperpage}{20}
+\indexentry{Data Proxy|hyperpage}{20}
+\indexentry{OSGi Service|hyperpage}{20}
+\indexentry{DataBean|hyperpage}{20}
+\indexentry{Conrad|hyperpage}{21}
+\indexentry{de novo|hyperpage}{21}
+\indexentry{gene caller|hyperpage}{21}
+\indexentry{Markow|hyperpage}{21}
+\indexentry{Conditional Random Fields|hyperpage}{21}
+\indexentry{CRF|see{Conditional Random Fields}}{21}
+\indexentry{Aspergillus niger|hyperpage}{21}
+\indexentry{over fitting|hyperpage}{21}
