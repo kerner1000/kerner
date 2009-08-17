@@ -1,63 +1,79 @@
 \chapter{Umsetzung}
-\section{Anna}
-Die Basis der Pipeline bildet das OSGi Framework, sowie
-eine Auswahl an Standard-Services.
-\index{Pipeline}
-\index{OSGi Framework}
-\index{Standard-Services}
-Folgende Bundles aus der OSGi Service Plattform werden zur Ausführung der
-Pipeline benötigt:
-\begin{itemize}
-  \item
-  \begin{verbatim}org.eclipse.osgi_3.4.0.v20080605-1900.jar\end{verbatim}
-  \item
-  \begin{verbatim}org.eclipse.equinox.common_3.4.0.v20080421-2006.jar\end{verbatim}
-  \item
-  \begin{verbatim}org.eclipse.equinox.log_1.1.0.v20080414.jar\end{verbatim}
-  \item
-  \begin{verbatim}org.eclipse.equinox.util_1.0.0.v20080414.jar\end{verbatim}
-  \item
-  \begin{verbatim}org.eclipse.osgi.services_3.1.200.v20071203.jar\end{verbatim}
-  \item
-  \begin{verbatim}org.eclipse.osgi.util_3.1.300.v20080303.jar\end{verbatim}
-\end{itemize}
 
-\begin{figure}[ht]
+\section{\code{Step}}
+ein Step definiert sich über das gleichnaminge Interface, das drei call back
+Methoden bereitstellt, die nach der Anmeldung am Server durch diesen ausgeführt
+werden.
+Als Parameter erhalten diese Methoden jeweils eine Instanz auf ein
+\code{DataProxy} Objekt, über welches schliesslich die zentrale \code{DataBean}
+bezogen werden kann \todo{schon erklärt?}.
+\\
+\index{Interface!Step}
+
+\lstinputlisting[frame=single,label=step,caption=Step]{code/step}
+
+\section{\code{AbstractStep}}
+Die Kernanwendung \todo{wasdas} stellt eine abstrakte Klasse bereit, von der
+Step Implentierungen erben können.
+\index{Klasse!AbstractStep}
+Diese Klasse implementiert bereits wiederkehrende Funktionalitäten wie das
+Anmelden am Server, das Bereitstellen eines Loggers oder die Verwaltung von
+Properties.
+Eine Implementierung von \code{AbstractStep} implementiert neben \code{Step} das
+Interface \code{BundleActivator}, wodurch diese einfach als
+\first{Activator Klasse}\footnote{\todo{Activator class blabla}}
+in neuen StepBundles verwendet werden kann. \todo{wasn das fürn satzbau}
+\index{Interface!BundleActivator}
+
+\section{\code{Server}}
+\lstinputlisting[frame=single,label=step,caption=Server]{code/server}
+
+\subsection{\code{StepExecutor}}
+
+\subsection{\code{DataProxy}}
+
+Technisch gesehen besteht die Annotationspipeline OSGi-typisch aus mehreren
+jar-Dateien / Bundles sowie wenigen Konfigurationsdateien.
+Die einzelnen Bundles sind zugunsten der Überischt in verschiedenen
+Unterverzeichnissen abgelegt.
+
+\begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[scale=0.68]{pics/anna_folder_framework.jpg}
-	\caption[Application core]{
-	\textbf{Application core.}
-	something}
+		\includegraphics[scale=0.7]{pics/coreDir.png}
+	\caption[coreDir]{
+	\textbf{coreDir.}
+	something.}
 	\end{center}
-	\label{fig:anna_folder_framework}
+	\label{fig:programOrganisationOverview3ScaledWithAlpha}
 \end{figure}
 
-Über die Konfigurationsdatei des OSGi Frameworks ist festgelegt, dass beim
-Starten des Frameworks das Bundle
-\begin{verbatim}de.mpg.mpiz.koeln.anna.core.starter_1.0.0.jar\end{verbatim}
-automatisch installiert und gestartet wird. Dieses Bundle initialisiert und
-startet die Pipeline, indem es alle Bundles, die sich in den Unterverzeichnissen
-\texttt{00-*} bis \texttt{06-*} des working directories befinden, installiert
-und startet. Die Verzeichnisse \texttt{00-*} bis \texttt{03-*} enthalten
-hierbei Bundles, die gewisse Kernfunktionalitäten bereitstellen, wie z.B. die
-benötigten OSGi Standard-Services oder andere Biblioteken, wie z.B.
-\texttt{bioutils} oder \texttt{kerner-commons}.
-Die Verzeichnisse \texttt{04-*} und \texttt{05-*} enhalten den
-Pipeline-Server, Verzeichnis \texttt{06-*} soll alle Bundles enthalten, die
-einen Pipeline Step zur Verfügung stellen.
-Die Verzeichnisse werden nach ihrer numerischen Reihenfolge abgearbeitet.
-Angefangen bei Verzeichnis \texttt{00-*} bis zu Verzeichnis \texttt{06-*} werden
-alle im jeweiligen Verzeichnis vorhandene Bundles installiert und im direkten
-Anschluss gestartet. Unterverzeichnisse werden nicht berücksichtigt.
+Das Programm wird über eine batch-Datei gestartet,
+die wiederum das OSGi Framework startet:
+\begin{verbatim}
+start.sh:
+java -Xmx1024m -jar org.eclipse.osgi_3.4.0.v20080605-1900.jar
+-clean\end{verbatim}
+Das OSGi Framework ist so konfiguriert (\code{configuration/config.ini}), dass
+es beim Starten automatisch das Bundle
+\begin{verbatim}
+de.mpg.mpiz.koeln.anna.core.starter_2.0.1.jar
+\end{verbatim}
+installiert und startet.
+Dieses Bundle initialisiert und startet nun die Pipeline, indem es alle Bundles,
+die sich in den Verzeichnissen \code{00-} bis \code{06-} befinden, startet
+\todo{startet startet startet}. Im Verzeichnis \code{06-} sollten sich dabei
+alle Step-Bundles befinden, die in der Pipeline genutzt werden sollen.
 
-\subsection{Server}
-Der Pipeline Server besteht aus zwei Elementen: Zum einen einem 
-Step Executor, der die einzelnen Steps zur Ausführung bringt, sowie einen
-Data Proxy, der den Zugriff auf das \code{DataBean} Objekt steuert.
-Step Executor sowie Data Proxy sind als OSGi Service implementiert.
-\code{AbstractStep} implementiert \code{BundleActivator}, so dass er den
-Pipeline Server Service an der \textit{Service Registry} abfragen und sich dort
-registrieren kann.
+
+
+\section{Server}
+Der Server der Pipeline besteht aus zwei Elementen: Zum einen ein
+\code{StepExecutor}, der die einzelnen Steps zur Ausführung bringt, sowie der
+\code{DataProxy}, der den Zugriff auf das \code{DataBean} Objekt
+\todo{schon erklärt?} steuert. \code{StepExecutor} sowie \code{DataProxy} sind
+als OSGi Service implementiert. Den einzelnen Clients ist es somit möglich, über OSGi
+spezifische Möglichkeiten \todo{hmmm} eine Server Refrenz abzufragen und sich
+dort entsprechend anzumelden.
 \index{Server|see{Pipeline-Server}}
 \index{Pipeline-Server}
 \index{Data Proxy}
@@ -66,13 +82,13 @@ registrieren kann.
 %\lstinputlisting[frame=single,label=server,caption=Application
 %Server]{code/server}
 
-\subsubsection{StepExecutor}
+\subsection{StepExecutor}
 Wird ein Step am Server registriert, wird er an einen StepExecutor übergeben,
 der die Ausführung des Steps überwacht und steuert. Er ruft im wesentlichen
 die drei Callback Methoden von \code{Step} auf.
-\lstinputlisting[frame=single,label=step,caption=Step]{code/step}
 
-\subsubsection{DataProxy}
+
+\subsection{DataProxy}
 Die Pipeline persistiert die (Zwischen-)Ergebnisse einzelner Steps, um bei
 einer gewollten oder ungewollten Unterbrechung des Programms die bis dahin
 gewonnenen Daten nicht zu verlieren. Eine \code{Step} Implementierung bekommt
@@ -91,9 +107,17 @@ Aspekte der Synchronization und Serialisierung der Daten.
 	\label{fig:programDataManagment}
 \end{figure}
 
-\subsection{Steps}
+
+
+\index{Pipelineserver}
+\index{OSGi Service}
+
+
+
+
+\section{Implementierungen von \code{Step}}
 Ein Pipeline Step muss von \code{AbstractStep} erben.
-\subsubsection{Conrad}
+\subsection{Conrad}
 Conrad
 (\htmladdnormallink{http://www.broadinstitute.org/annotation/conrad/}{http://www.broadinstitute.org/annotation/conrad/})
 ist ein \textit{de novo} gene caller, der Genstrukturen wie Exons und Introns
@@ -215,7 +239,7 @@ Basen-\enquote{Zustände} zu den tatsächlichen Basen-Zuständen.
 
 \paragraph{Conrad-local}
 \paragraph{Conrad-lsf}
-\subsubsection{RepeatMasker}
+\subsection{RepeatMasker}
 RepeatMasker
 (\htmladdnormallink{http://www.repeatmasker.org/}{http://www.repeatmasker.org/})
 ist ein Open Source Projekt, das repetetive Elemente einer Sequenz
@@ -232,7 +256,7 @@ Die ursprüngliche Sequenzinformation bleibt auf diese Weise	erhalten.
 
 \paragraph{RepeatMasker-lsf}
 
-\subsection{Libraries}
+\section{Libraries}
 Neben den Basisfunktionalitäten und den bereits erwähnten Steps
 beinhaltet Anna noch verschiedene Bundles, die Klassen aus externen Libraries
 bereitstellen:

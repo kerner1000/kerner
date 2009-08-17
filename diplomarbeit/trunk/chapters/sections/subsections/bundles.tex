@@ -1,0 +1,37 @@
+\subsection{Bundles}
+Ein Bundle ist nach OSGi Spezifikation\citep{osgi_2009} eine technische Einheit
+von Klassen und Ressourcen, die eigentständig in der Anwenung gestartet,
+gestoppt, installiert und deinstalliert werden kann.
+\index{Bundle}
+
+Ressourcen und Klassen eines Bundles können anderen Bundles bereitgestellt
+werden. Dazu müssen sie vom bereitstellenden Bundle explizit exportiert werden
+und durch das nutzende Bundle explizit importiert werden. Jedes Bundle stellt einen
+Bundlenamen, der üblicherweise von der enthaltenen Paketstruktur
+abgeleitet wird, sowie eine Versionsnummer bereit. Aus diesen beiden Komponenten
+wird dann eine eindeutige Identifizierung des Bundles generiert.
+So ist es beispielsweise möglich, ein und das selbe Bundle in unterschiedlichen
+Versionierungen zu installieren.
+
+Über die \first{MANIFEST.MF}, die ohnehin in jedem Jar-File vorhanden ist, wird
+das Bundle neben dem Namen und der Version mit weiteren Meta-Informationen, wie
+importierte und exportierte Pakete oder Lauzeitumgebung, ausgestattet.
+\index{MANIFEST.MF}
+
+Jedes Bundle ist innerhalb des Frameworks mit einem eigenen Class-Loader
+ausgestattet, über welchen ausschliesslich die Bundle-eigenen Klassen geladen
+werden. Auf diese Weise sind die einzelen Bundles strikt voneinander getrennt und die
+Import-Export-Beziehungen zwischen den Bundles können explizit gesteuert
+werden. 
+Neben anderen Vorteilen, wie etwa das Installieren des selben Bundles in
+unterschiedlichen Versionen, wird auf diese Weise das vollständig
+dynamische Hinzufügen und Entfernen von Bundles erst ermöglicht, da der
+Class Path des Class Loaders nach dessen Instanziierung nicht mehr verändert
+werden kann.
+\citep{wtherich_die_2008}
+% selbe version 17
+% importieren, exportieren 13,79
+% class loading 89
+% MANIFEST.MF 21
+% lebenszyklen 23,55
+% unterschied Bundle / Plug-In 41

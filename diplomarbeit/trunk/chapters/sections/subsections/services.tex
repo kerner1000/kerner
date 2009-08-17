@@ -1,0 +1,43 @@
+\subsection{Services} % 93
+Das OSGi Framework stellt gemäß der serviceorientierten Architektur eine
+zentrale, bundleübergreifende \first{Service Registry} bereit, an der
+sogenannte \first{Services} angemeldet und abgefragt werden können.
+\index{Service Registry}
+Ein Service ist in diesem Fall ein simples Java-Objekt, typischerweise ein
+Interface, das unter dem Interface-Namen und einer optionalen Beschreibung an
+der Registry angemeldet wird.
+Der Zugriff auf die Registry kann durch jedes beliebige, im
+Framework geladene Bundle erfolgen. Der Zugriff kann hier aktiv oder passiv
+erfolgen.
+\index{Bundle}
+
+Bei einem aktiven Zugriff, also der Registrierung eines Services durch ein
+Bundle, wird technisch gesehen ein Service-Namen, sowie eine Beschreibung des
+Services an der Service Registry hinterlegt. Der Service-Name ist üblicherweise
+der voll qualifizierende Klassenname des Service Interfaces, die Beschreibung
+des Service ist eine Sammlung von Strings, die eine entsprechende Beschreibung
+der bereitgestellten Funktion beinhalten.
+\index{Service Interface}
+
+Bei einem passiven Zugriff durch ein beliebiges Bundle, also dem Abfragen eines
+Service über dessen Namen oder Beschreibung, liefert die Registry eine
+Referenz auf das entsprechende Interface zurück.
+Über diese Referenz auf das Service Interface kann nun die Funktionalität, die
+dieses Interface bereitstellt, genutzt werden, ohne dass hierbei bekannt ist,
+wie diese Funktionalität implementiert ist, oder welches Bundle diese
+bereitstellt.
+
+Durch die dynamische Modularisierung des OSGi Frameworks können Services zur
+Laufzeit \enquote{kommen und gehen}. Es liegt in der Verantwortung des
+nutzenden Bundles, auf die aktuelle Verfügbarkeit des Service entsprechend zu
+reagieren.
+
+Die \first{OSGi Service Platform} enthält aufbauend auf das OSGi Framework eine
+Reihe von \first{Standard Services}, mit denen häufig wiederkehrenden
+Problemstellungen begegnet werden kann. So steht beispielsweise ein Log-Service
+zur Verfügung, über den Bundles Nachrichten absenden und empfangen können.
+Desweiteren sind über die Standard Services auch Funktionenen zur
+Benutzerverwaltung, HTTP oder Datenbankanbindung realisiert.
+\index{OSGi Service Platform}
+% Standard Services 13,25
+\citep{wtherich_die_2008}

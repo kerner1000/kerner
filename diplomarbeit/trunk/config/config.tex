@@ -102,13 +102,21 @@
 \usepackage{wrapfig}
 
 \usepackage{listings}
-\lstset{numbers=left, numberstyle=\small, language=Java}
-
+\lstset{numbers=left,
+	numberstyle=\small,
+	language=Java,
+	backgroundcolor=\color{white},
+	captionpos=b,
+	breaklines=true,        
+	breakatwhitespace=false,
+	tabsize=4,
+}
 \usepackage{color}
 \newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\first}[1]{\textbf{#1}}
 \newcommand{\name}[1]{\textit{#1}}
 \newcommand{\todo}[1]{\textcolor{red}{[\textit{\small{#1}}]}}
+\newcommand{\geneseq}[1]{\texttt{#1}}
 
 %
 %  1. Index erzeugen.

@@ -1,11 +1,14 @@
-\subsection{intrinsisch \todo{geklaut von BPS}}
+\subsection{intrinsisch}
 Bei der intrinsischen Genvorhersage werden proteinkodierende Gene, bzw.
 \first{Open Reading Frames}, kurz \first{ORFs}, nur über bestimmte Merkmale in
 der Sequenz selbst identifiziert.
+\index{intrinsisch}
+\index{Genvorhersage}
+\index{Genvorhersage!intrinsisch}
 \index{Open Reading Frame}
 \index{ORF|see{Open Reading Frame}}
 Solche Merkmale sind zum Beispiel Start- und Stopp-Codons (bei
-Eukaryoten \texttt{ATG} bzw. \texttt{TAG}) oder Splice-Sites.
+Eukaryoten \geneseq{ATG} bzw. \geneseq{TAG}) oder Splice-Sites.
 \index{Start Codon}
 \index{Stop Codon}
 \index{Splice Site}
@@ -14,7 +17,7 @@ konserviert, was die Erkennung erschwert.
 \index{Intron}
 \index{Exon}
 Üblicherweise sind die beiden Basenpaare unmittelbar vor einer
-Splice Site \texttt{AG} und unmittelbar hinter einer Splice Site \texttt{GT}.
+Splice Site \geneseq{AG} und unmittelbar hinter einer Splice Site \geneseq{GT}.
 
 Die Erkennung dieser Sequenzcharakteristika ist keinenfalls trivial, da entsprechende
 Merkmale nicht eindeutig, speziesspezifisch oder, wie bereits erwähnt, nicht
@@ -24,20 +27,21 @@ Modelle zu bedienen.
 
 Üblicherweise bedienen sich moderne de novo \todo{was das?} Programme dem Hidden
 Markov Model, das hier näher beschrieben werden soll.
+\index{Hidden Markov Model}
 
-\subsubsection{Hidden Markov Model \todo{geklaut von BPS}}
+\subsubsection{Hidden Markov Model}
 Das \first{Hidden Markov Model} (kurz \first{HMM})
 beschreibt ein System von (bekannten) Zuständen, die mit einer bestimmten
 Wahrscheinlichkeit ineinander übergehen.
 \index{Hidden Markov Model}
 \index{HMM|see{Hidden Markov Model}}
-\index{Zustand}
+\index{Zuständen}
 Aus jedem der (verborgenen) Zustände entsteht mit einer
 bestimmten Wahrscheinlichkeit ein zugehöriges Ausgabesymbol.
 \index{Ausgabesymbol}
 Als Beispiel für eine Problemstellung, die sich durch ein HMM dargestellten
 lässt, betrachten wir folgendes Szenario:
-Gegeben ist ein Stück Papier, auf dem die Buchstaben \enquote{\texttt{hst}}
+Gegeben ist ein Stück Papier, auf dem die Buchstaben \enquote{hst}
 gedruckt sind.
 Diese Buchstaben sind Teil einer englischsprachigen Nachricht.
 Offensichtlich handelt es sich bei dieser Buchstabenfolge um einen Tippfehler.
@@ -107,3 +111,4 @@ Wichtungs-Matrizen ab.
 \citep{pmid16339376, pmid17687368, pmid10779491}
 
 \subsubsection{Conditional Random Fields}
+\todo{\dots}
