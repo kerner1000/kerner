@@ -1,39 +1,13 @@
 \chapter{Umsetzung}
+\todo{\dots}
 
-\section{\code{Step}}
-ein Step definiert sich über das gleichnaminge Interface, das drei call back
-Methoden bereitstellt, die nach der Anmeldung am Server durch diesen ausgeführt
-werden.
-Als Parameter erhalten diese Methoden jeweils eine Instanz auf ein
-\code{DataProxy} Objekt, über welches schliesslich die zentrale \code{DataBean}
-bezogen werden kann \todo{schon erklärt?}.
-\\
-\index{Interface!Step}
+\input{chapters/sections/data}
+\input{chapters/sections/step}
+\input{chapters/sections/server}
 
-\lstinputlisting[frame=single,label=step,caption=Step]{code/step}
-
-\section{\code{AbstractStep}}
-Die Kernanwendung \todo{wasdas} stellt eine abstrakte Klasse bereit, von der
-Step Implentierungen erben können.
-\index{Klasse!AbstractStep}
-Diese Klasse implementiert bereits wiederkehrende Funktionalitäten wie das
-Anmelden am Server, das Bereitstellen eines Loggers oder die Verwaltung von
-Properties.
-Eine Implementierung von \code{AbstractStep} implementiert neben \code{Step} das
-Interface \code{BundleActivator}, wodurch diese einfach als
-\first{Activator Klasse}\footnote{\todo{Activator class blabla}}
-in neuen StepBundles verwendet werden kann. \todo{wasn das fürn satzbau}
-\index{Interface!BundleActivator}
-
-\section{\code{Server}}
-\lstinputlisting[frame=single,label=step,caption=Server]{code/server}
-
-\subsection{\code{StepExecutor}}
-
-\subsection{\code{DataProxy}}
-
+\section{Datenstruktur \todo{name?}}
 Technisch gesehen besteht die Annotationspipeline OSGi-typisch aus mehreren
-jar-Dateien / Bundles sowie wenigen Konfigurationsdateien.
+jar-Dateien (Bundles) sowie wenigen Konfigurationsdateien.
 Die einzelnen Bundles sind zugunsten der Überischt in verschiedenen
 Unterverzeichnissen abgelegt.
 
@@ -44,7 +18,7 @@ Unterverzeichnissen abgelegt.
 	\textbf{coreDir.}
 	something.}
 	\end{center}
-	\label{fig:programOrganisationOverview3ScaledWithAlpha}
+	\label{fig:coreDir}
 \end{figure}
 
 Das Programm wird über eine batch-Datei gestartet,
@@ -64,59 +38,8 @@ die sich in den Verzeichnissen \code{00-} bis \code{06-} befinden, startet
 \todo{startet startet startet}. Im Verzeichnis \code{06-} sollten sich dabei
 alle Step-Bundles befinden, die in der Pipeline genutzt werden sollen.
 
-
-
-\section{Server}
-Der Server der Pipeline besteht aus zwei Elementen: Zum einen ein
-\code{StepExecutor}, der die einzelnen Steps zur Ausführung bringt, sowie der
-\code{DataProxy}, der den Zugriff auf das \code{DataBean} Objekt
-\todo{schon erklärt?} steuert. \code{StepExecutor} sowie \code{DataProxy} sind
-als OSGi Service implementiert. Den einzelnen Clients ist es somit möglich, über OSGi
-spezifische Möglichkeiten \todo{hmmm} eine Server Refrenz abzufragen und sich
-dort entsprechend anzumelden.
-\index{Server|see{Pipeline-Server}}
-\index{Pipeline-Server}
-\index{Data Proxy}
-\index{OSGi Service}
-\index{DataBean}
-%\lstinputlisting[frame=single,label=server,caption=Application
-%Server]{code/server}
-
-\subsection{StepExecutor}
-Wird ein Step am Server registriert, wird er an einen StepExecutor übergeben,
-der die Ausführung des Steps überwacht und steuert. Er ruft im wesentlichen
-die drei Callback Methoden von \code{Step} auf.
-
-
-\subsection{DataProxy}
-Die Pipeline persistiert die (Zwischen-)Ergebnisse einzelner Steps, um bei
-einer gewollten oder ungewollten Unterbrechung des Programms die bis dahin
-gewonnenen Daten nicht zu verlieren. Eine \code{Step} Implementierung bekommt
-beim Aufruf der Callback Methoden eine Refrenz auf einen Data Proxy, über den
-die aktuell in der Pipeline verfügbaren Daten abgefragt werden können. Der
-Proxy kontrolliert den Zugriff auf die Daten und implementiert dabei alle
-Aspekte der Synchronization und Serialisierung der Daten.
-
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[scale=0.42]{pics/programDataManagment.jpg}
-	\caption[Data Management]{
-	\textbf{Data Management.}
-	something}
-	\end{center}
-	\label{fig:programDataManagment}
-\end{figure}
-
-
-
-\index{Pipelineserver}
-\index{OSGi Service}
-
-
-
-
-\section{Implementierungen von \code{Step}}
-Ein Pipeline Step muss von \code{AbstractStep} erben.
+\section{Implementierungen von Step}
+\todo{\dots}
 \subsection{Conrad}
 Conrad
 (\htmladdnormallink{http://www.broadinstitute.org/annotation/conrad/}{http://www.broadinstitute.org/annotation/conrad/})

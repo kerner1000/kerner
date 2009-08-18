@@ -1,4 +1,4 @@
-public interface Server {
+public interface StepExecutorService {
 	void registerStep(Step step);
 	void unregisterStep(Step step);
 }

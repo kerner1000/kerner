@@ -96,21 +96,35 @@
 \indexentry{Server|hyperpage}{17}
 \indexentry{OSGi Framework|hyperpage}{17}
 \indexentry{call back method|hyperpage}{17}
-\indexentry{Interface!Step|hyperpage}{20}
-\indexentry{Klasse!AbstractStep|hyperpage}{20}
-\indexentry{Interface!BundleActivator|hyperpage}{21}
-\indexentry{Server|see{Pipeline-Server}}{23}
-\indexentry{Pipeline-Server|hyperpage}{23}
-\indexentry{Data Proxy|hyperpage}{23}
-\indexentry{OSGi Service|hyperpage}{23}
+\indexentry{DataBean|hyperpage}{20}
+\indexentry{Klasse!DataBean|hyperpage}{20}
+\indexentry{JavaBean|hyperpage}{20}
+\indexentry{Interface!Step|hyperpage}{23}
+\indexentry{DataProxy|hyperpage}{23}
 \indexentry{DataBean|hyperpage}{23}
-\indexentry{Pipelineserver|hyperpage}{23}
-\indexentry{OSGi Service|hyperpage}{23}
-\indexentry{Conrad|hyperpage}{24}
-\indexentry{de novo|hyperpage}{24}
-\indexentry{gene caller|hyperpage}{24}
-\indexentry{Markow|hyperpage}{24}
-\indexentry{Conditional Random Fields|hyperpage}{24}
-\indexentry{CRF|see{Conditional Random Fields}}{24}
-\indexentry{Aspergillus niger|hyperpage}{24}
-\indexentry{over fitting|hyperpage}{24}
+\indexentry{Klasse!AbstractStep|hyperpage}{23}
+\indexentry{Interface!BundleActivator|hyperpage}{23}
+\indexentry{Pipelineserver|hyperpage}{24}
+\indexentry{OSGi Service|hyperpage}{24}
+\indexentry{StepExecutor Service|hyperpage}{24}
+\indexentry{DataProxy Service|hyperpage}{24}
+\indexentry{DataProxy|hyperpage}{24}
+\indexentry{DataProxy Service|hyperpage}{24}
+\indexentry{Pipelineserver|hyperpage}{24}
+\indexentry{StepExecutor Service|hyperpage}{24}
+\indexentry{DataBean|hyperpage}{25}
+\indexentry{Methode!boolean canBeSkipped(DataProxy d)|hyperpage}{25}
+\indexentry{execution precondition|hyperpage}{25}
+\indexentry{Methode!boolean requirementsSatisfied(DataProxy d)|hyperpage}{25}
+\indexentry{DataBean|hyperpage}{25}
+\indexentry{Methode!boolean requirementsSatisfied(DataProxy d)|hyperpage}{25}
+\indexentry{Methode!boolean run(DataProxy d)|hyperpage}{25}
+\indexentry{DataBean|hyperpage}{25}
+\indexentry{Conrad|hyperpage}{27}
+\indexentry{de novo|hyperpage}{27}
+\indexentry{gene caller|hyperpage}{27}
+\indexentry{Markow|hyperpage}{27}
+\indexentry{Conditional Random Fields|hyperpage}{27}
+\indexentry{CRF|see{Conditional Random Fields}}{27}
+\indexentry{Aspergillus niger|hyperpage}{28}
+\indexentry{over fitting|hyperpage}{28}
