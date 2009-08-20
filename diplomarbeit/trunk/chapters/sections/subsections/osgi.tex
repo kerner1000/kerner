@@ -1,4 +1,4 @@
-\section{Das OSGi Framework}
+\subsection{Das OSGi Framework}
 
 %\begin{wrapfigure}{r}{9.0cm}
 %	\begin{center}
@@ -15,13 +15,14 @@ Oracle oder Sun Microsystems.
 \index{OSGi|see{OSGi Alliance}}
 \index{Open Services Gateway|see{OSGi Alliance}}
 Sie spezifiziert die \first{OSGi Service Platform}, eine Java-basierte
-Softwareplattform, die dem Pattern des \first{Komponentenmodell} folgt.
+Softwareplattform, die dem Pattern des \first{Komponentenmodell}
 % footnote is von wikipedia !!!
 \footnote{nach Gruhn und Thiel\citep{gruhn_komponentenmodelle_2000}:
 \enquote{Ein Komponentenmodell legt einen Rahmen für die Entwicklung [..] von
 Komponenten fest, der strukturelle Anforderungen hinsichtlich Verknüpfungs-
 bzw. Kompositionsmöglichkeiten sowie verhaltensorientierte Anforderungen
 hinsichtlich Kollaborationsmöglichkeiten an die Komponenten stellt.}}
+folgt.
 Einzelne Komponenten, sogenannte \first{Bundles}, können der Anwendung
 dynamisch hinzugefügt und wieder entfernt werden ohne dass ein erneutes
 Kompilieren oder Starten der Anwendung nötig ist.
@@ -32,13 +33,14 @@ intelligentes Versionsmanagement steht ebenfalls zur Verfügung.
 \index{Bundle}
 
 Neben dem Komponentenmodell verwirklicht die Architektur des OSGi Frameworks
-auch Elemente einer \first{Service Orientierten Architektur}.
+auch Elemente einer \first{Service Orientierten Architektur}
 \footnote{Unter \enquote{serviceorientierte Architektur} oder auch
 \enquote{dienstorientierte Architektur} versteht man ein Softwaredesign, dass
 sich durch sogenannte Dienste oder auch Services auszeichnet. Diese können
 appliktaions-global an einer Registry angemeldet und abgefragt werden.
 Sie stellen dabei eine Schnittstelle zu bestimmten Funktionen bereit, ohne
 dabei die zu Grunde liegende Implementierung preiszugeben.}
+.
 So stellt das Framework eine globale Registry (\first{Service Registry})
 bereit, an der Bundles \first{Dienste} bzw. \first{Services} anmelden und
 abfragen können.
@@ -61,5 +63,5 @@ abfragen können.
 	\label{fig:osgi_layer}
 \end{figure}
 
-\input{chapters/sections/subsections/bundles}
-\input{chapters/sections/subsections/services}
+\input{chapters/sections/subsections/subsubsections/bundles}
+\input{chapters/sections/subsections/subsubsections/services}

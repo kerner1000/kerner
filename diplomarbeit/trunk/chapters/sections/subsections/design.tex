@@ -1,8 +1,8 @@
-\section{Design}
+\subsection{Design}
 Die Architektur der Software soll sich durch verschiedene Abstraktionebenen
 darstellen lassen. \todo{hier könnte es etwas mehr sein}
 
-\subsection{Pipes and Filters}
+\subsubsection{Pipes and Filters}
 Die höchste Abstraktion stellt das \first{Pipes and
 Filters}-Patten dar:
 \footnote{\todo{pipes and filters}}
@@ -72,7 +72,7 @@ Diese Anordnung legt eine weitere Abstraktionsebene nahe, nämlich das
 \footnote{\todo{Client-Server-Modell}}
 \index{Client-Server-Modell}
 
-\subsection{Client-Server-Modell}
+\subsubsection{Client-Server-Modell}
 Die \first{Pipes} des \name{pipes and filters} Pattern werden zu einem
 \first{Server} zusammengefasst und bilden das {statische Ausführungsgerüst}.
 Ein \first{Client} ist ein \first{Filter} des \name{pipes and filters} Pattern.
@@ -85,7 +85,7 @@ Es können sich beliebig viele Clients am Server anmelden, wodurch die
 eigentliche Pipeline aufgebaut wird.
 \todo{hmmhmm}
 
-\subsubsection{Server}
+\paragraph{Server}
 Die Anforderungen an den Server gliedern sich in zwei Teilbereiche:
 \begin{description}
 \item[Organisation und Synchronisation der Client Ausführung]
@@ -104,7 +104,7 @@ werden diese persistiert, um bei einer gewollten oder ungewollten Unterbrechung
 der Pipeline Datenverlust zu verhindern.
 \end{description}
 
-\subsubsection{Client}
+\paragraph{Client}
 Auf der Clientseite stehen die einzelnen \first{Filter} der Pipeline, im
 folgenden \first{Steps} genannt \todo{hmmm}. Jeder Step soll technisch
 gesehen einem oder mehreren OSGi-Bundles entsprechen.

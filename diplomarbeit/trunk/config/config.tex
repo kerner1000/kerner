@@ -11,7 +11,8 @@
 	bibtotocnumbered,%    Literaturverzeichnis im Inhaltsverzeichnis nummeriert einügen.
 	idxtotoc%             Index ins Inhaltsverzeichnis einfügen.
 ]{scrbook}
-
+\usepackage{geometry}
+\geometry{a4paper,bottom=4cm}
 %
 %  2. Festlegen der Zeichencodierung des Dokuments und des Zeichensatzes.
 %     Wir verwenden 'Latin1' (ISO-8859-1) für das Dokument,
@@ -119,8 +120,10 @@
 \newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\first}[1]{\textbf{#1}}
 \newcommand{\name}[1]{\textit{#1}}
-\newcommand{\todo}[1]{\textcolor{red}{[\textit{\small{#1}}]}}
+\newcommand{\todo}[1]{\textcolor{red}{[\textit{\small{ToDo: #1}}]}}
 \newcommand{\geneseq}[1]{\texttt{#1}}
+\newcommand{\seec}[1]{\footnote{siehe Kaptiel \ref{#1}}}
+\newcommand{\seef}[1]{\footnote{siehe Abbildung \ref{#1}}}
 
 %
 %  1. Index erzeugen.

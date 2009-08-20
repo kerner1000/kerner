@@ -5,9 +5,9 @@
 \input{chapters/sections/step}
 \input{chapters/sections/server}
 
-\section{Datenstruktur \todo{name?}}
-Technisch gesehen besteht die Annotationspipeline OSGi-typisch aus mehreren
-jar-Dateien (Bundles) sowie wenigen Konfigurationsdateien.
+\section{Verzeichnisstruktur}
+Technisch gesehen ist die Annotationspipeline OSGi-typisch aus
+mehreren jar-Dateien (Bundles) sowie wenigen Konfigurationsdateien aufgebaut.
 Die einzelnen Bundles sind zugunsten der Überischt in verschiedenen
 Unterverzeichnissen abgelegt.
 
@@ -27,8 +27,8 @@ die wiederum das OSGi Framework startet:
 start.sh:
 java -Xmx1024m -jar org.eclipse.osgi_3.4.0.v20080605-1900.jar
 -clean\end{verbatim}
-Das OSGi Framework ist so konfiguriert (\code{configuration/config.ini}), dass
-es beim Starten automatisch das Bundle
+Das OSGi Framework ist so konfiguriert (\code{configuration/config.ini})
+\todo{make me a footnote}, dass es beim Starten automatisch das Bundle
 \begin{verbatim}
 de.mpg.mpiz.koeln.anna.core.starter_2.0.1.jar
 \end{verbatim}
@@ -184,5 +184,10 @@ Neben den Basisfunktionalitäten und den bereits erwähnten Steps
 beinhaltet Anna noch verschiedene Bundles, die Klassen aus externen Libraries
 bereitstellen:
 \begin{description}
-\item[bioutils] dieses Bundle bringt 
+\item[bioutils] dieses Bundle enthält eine Sammlung
+von Klassen, die speziell bioinformatische Funktionalitäten bereitstellen.
+\todo{gogo, johnny go}
+\item[kerner.commons] stellt die Klassen aus dem Paket
+\name{kerner-commons} bereit. basic java functionallity, like convenient IO or
+String operations
 \end{description}
