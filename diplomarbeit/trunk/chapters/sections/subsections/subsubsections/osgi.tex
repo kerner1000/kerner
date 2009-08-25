@@ -1,4 +1,21 @@
-\subsection{Das OSGi Framework}
+\subsubsection{Das OSGi Framework}
+
+Um das benötigte Plug-in System zu realisieren, boten sich verschiedene
+\first{Application Frameworks} an, die eine entsprechende Funktionalität
+bereitstellen und somit als Programmbasis für die  Pipeline dienen konnten.
+\index{Application Framework}
+Die Wahl fiel hier auf das \first{OSGi Framework} \first{Equinox}, welches von
+der \name{Eclipse Fundation} entwickelt wird und auch die Basis für die
+Entwickungsumgebung \name{Eclipse} darstellt.
+\index{Equinox}
+\index{OSGi}
+\index{OSGi Framework|see{OSGi}} 
+\index{Eclipse}
+
+\name{Eclipse Equinox} ist in Java geschrieben, was der Portierbarkeit der
+Pipeline entgegenkommt. Ausserdem bietet die Framework-Architektur maximale
+Modularisierung, wodurch sich Anwendungen auf Basis von \name{Eclipse Equinox}
+durch hervorragende Erweiterbarkeit und Skalierbarkeit auszeichnen.
 
 %\begin{wrapfigure}{r}{9.0cm}
 %	\begin{center}
@@ -7,6 +24,8 @@
 %	\end{center}
 %	\label{fig:hmm}
 %\end{wrapfigure}
+
+\todo{Sprung}
 
 Die \name{OSGi Alliance}, früher \enquote{\textit{Open Services Gateway
 initiative}}, ist ein Zusammenschluß verschiedener Unternehmen, wie z.B. IBM,
@@ -23,6 +42,7 @@ Komponenten fest, der strukturelle Anforderungen hinsichtlich Verknüpfungs-
 bzw. Kompositionsmöglichkeiten sowie verhaltensorientierte Anforderungen
 hinsichtlich Kollaborationsmöglichkeiten an die Komponenten stellt.}}
 folgt.
+\citep{wtherich_die_2008}
 Einzelne Komponenten, sogenannte \first{Bundles}, können der Anwendung
 dynamisch hinzugefügt und wieder entfernt werden ohne dass ein erneutes
 Kompilieren oder Starten der Anwendung nötig ist.
@@ -33,7 +53,7 @@ intelligentes Versionsmanagement steht ebenfalls zur Verfügung.
 \index{Bundle}
 
 Neben dem Komponentenmodell verwirklicht die Architektur des OSGi Frameworks
-auch Elemente einer \first{Service Orientierten Architektur}
+vor allem Elemente einer \first{Service Orientierten Architektur}
 \footnote{Unter \enquote{serviceorientierte Architektur} oder auch
 \enquote{dienstorientierte Architektur} versteht man ein Softwaredesign, dass
 sich durch sogenannte Dienste oder auch Services auszeichnet. Diese können
@@ -63,5 +83,5 @@ abfragen können.
 	\label{fig:osgi_layer}
 \end{figure}
 
-\input{chapters/sections/subsections/subsubsections/bundles}
-\input{chapters/sections/subsections/subsubsections/services}
+\input{chapters/sections/subsections/subsubsections/paragraphs/bundles}
+\input{chapters/sections/subsections/subsubsections/paragraphs/services}

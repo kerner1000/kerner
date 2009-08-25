@@ -65,45 +65,48 @@
 \indexentry{Platform LSF|hyperpage}{14}
 \indexentry{compute cluster|see{Platform LSF}}{14}
 \indexentry{\name{Colletotrichum higginsianum}|hyperpage}{14}
-\indexentry{Application Framework|hyperpage}{15}
-\indexentry{Equinox|hyperpage}{15}
-\indexentry{OSGi|hyperpage}{15}
-\indexentry{OSGi Framework|see{OSGi}}{15}
-\indexentry{Eclipse|hyperpage}{15}
-\indexentry{OSGi Alliance|hyperpage}{15}
-\indexentry{OSGi|see{OSGi Alliance}}{15}
-\indexentry{Open Services Gateway|see{OSGi Alliance}}{15}
-\indexentry{OSGi Service Platform|hyperpage}{16}
-\indexentry{Bundle|hyperpage}{16}
-\indexentry{Dienst|hyperpage}{16}
-\indexentry{Registry|see{Service Registry}}{16}
-\indexentry{Service Registry|hyperpage}{16}
-\indexentry{Service|hyperpage}{16}
-\indexentry{Bundle|hyperpage}{17}
-\indexentry{MANIFEST.MF|hyperpage}{17}
-\indexentry{Service Registry|hyperpage}{17}
+\indexentry{Softwarearchitekur|hyperpage}{15}
+\indexentry{Architektur|see{Softwarearchitekur}}{15}
+\indexentry{Muster|see{Architekturmuster}}{15}
+\indexentry{Architekturmuster|hyperpage}{15}
+\indexentry{Architekturmuster!Pipes and Filters|hyperpage}{15}
+\indexentry{Filter|hyperpage}{16}
+\indexentry{execution precondition|hyperpage}{16}
+\indexentry{Platform LSF|hyperpage}{16}
+\indexentry{Filter|hyperpage}{17}
+\indexentry{Step|hyperpage}{17}
+\indexentry{Client|hyperpage}{17}
+\indexentry{Step|hyperpage}{18}
+\indexentry{Filter|hyperpage}{18}
+\indexentry{Client|hyperpage}{18}
 \indexentry{Bundle|hyperpage}{18}
-\indexentry{Service Interface|hyperpage}{18}
-\indexentry{OSGi Service Platform|hyperpage}{18}
-\indexentry{Pipes and Filters|hyperpage}{19}
-\indexentry{Filter|hyperpage}{19}
-\indexentry{execution precondition|hyperpage}{19}
-\indexentry{Platform LSF|hyperpage}{19}
-\indexentry{Client-Server-Modell|hyperpage}{20}
-\indexentry{Filter|hyperpage}{20}
-\indexentry{Step|hyperpage}{20}
-\indexentry{Client|hyperpage}{20}
-\indexentry{Step|hyperpage}{21}
-\indexentry{Filter|hyperpage}{21}
-\indexentry{Client|hyperpage}{21}
+\indexentry{OSGi-Bundle|hyperpage}{18}
+\indexentry{Server|hyperpage}{18}
+\indexentry{OSGi Framework|hyperpage}{18}
+\indexentry{call back method|hyperpage}{18}
+\indexentry{Application Framework|hyperpage}{18}
+\indexentry{Equinox|hyperpage}{18}
+\indexentry{OSGi|hyperpage}{18}
+\indexentry{OSGi Framework|see{OSGi}}{18}
+\indexentry{Eclipse|hyperpage}{18}
+\indexentry{OSGi Alliance|hyperpage}{18}
+\indexentry{OSGi|see{OSGi Alliance}}{18}
+\indexentry{Open Services Gateway|see{OSGi Alliance}}{18}
+\indexentry{OSGi Service Platform|hyperpage}{19}
+\indexentry{Bundle|hyperpage}{19}
+\indexentry{Dienst|hyperpage}{19}
+\indexentry{Registry|see{Service Registry}}{19}
+\indexentry{Service Registry|hyperpage}{19}
+\indexentry{Service|hyperpage}{19}
+\indexentry{Bundle|hyperpage}{19}
+\indexentry{MANIFEST.MF|hyperpage}{21}
+\indexentry{Service Registry|hyperpage}{21}
 \indexentry{Bundle|hyperpage}{21}
-\indexentry{OSGi-Bundle|hyperpage}{21}
-\indexentry{Server|hyperpage}{21}
-\indexentry{OSGi Framework|hyperpage}{21}
-\indexentry{call back method|hyperpage}{21}
-\indexentry{\name{C. higginsianum}|see\name{Colletotrichum higginsianum}}{23}
-\indexentry{intrinsisch|hyperpage}{23}
-\indexentry{homologiebasiert|hyperpage}{23}
+\indexentry{Service Interface|hyperpage}{21}
+\indexentry{OSGi Service Platform|hyperpage}{22}
+\indexentry{\name{C. higginsianum}|see\name{Colletotrichum higginsianum}}{22}
+\indexentry{intrinsisch|hyperpage}{22}
+\indexentry{homologiebasiert|hyperpage}{22}
 \indexentry{Conditional Random Field|hyperpage}{23}
 \indexentry{Hidden Markov Model|hyperpage}{23}
 \indexentry{DataBean|hyperpage}{24}

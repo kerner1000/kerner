@@ -1,25 +1,29 @@
 \chapter{Entwurf}
 
 \section{Softwarearchitektur}\label{chp:softwarearchitektur}
-Um das benötigte Plug-in System zu realisieren, boten sich verschiedene
-\first{Application Frameworks} an, die eine entsprechende Funktionalität
-bereitstellen und somit als Programmbasis für die  Pipeline dienen konnten.
-\index{Application Framework}
-Die Wahl fiel hier auf das \first{OSGi Framework} \first{Equinox}, welches von
-der \name{Eclipse Fundation} entwickelt wird und auch die Basis für die
-Entwickungsumgebung \name{Eclipse} darstellt.
-\index{Equinox}
-\index{OSGi}
-\index{OSGi Framework|see{OSGi}} 
-\index{Eclipse}
+Um den verschiedenen Anforderungen gerecht zu werden,
+folgt die Softwarearchitektur drei Architekturmustern
+\todo{erklären?}
+aus der
+Softwareentwicklung, mit denen sich die Anwendung auf unterschiedlichen
+Abstraktionsebenen beschreiben lässt:
+\citep{buschmann_pattern-oriented_1996}
+\index{Softwarearchitekur}
+\index{Architektur|see{Softwarearchitekur}}
+\index{Muster|see{Architekturmuster}}
+\index{Architekturmuster}
+\todo{einzelne Muster generell erklären?}
 
-\name{Eclipse Equinox} ist in Java geschrieben, was der Portierbarkeit der
-Pipeline entgegenkommt. Ausserdem bietet die Framework-Architektur maximale
-Modularisierung, wodurch sich Anwendungen auf Basis von \name{Eclipse Equinox}
-durch hervorragende Erweiterbarkeit und Skalierbarkeit auszeichnen.
+\input{chapters/sections/subsections/pipesandfilters}
+\input{chapters/sections/subsections/clientserver}
 
-\input{chapters/sections/subsections/osgi}
-\input{chapters/sections/subsections/design}
+\subsection{Serviceorientierte Architektur}
+Auf unterster Abstraktionebene weisst die Software eine
+\first{serviceorientierte Architekur} auf.
+Diese wird massgeblich durch das \first{OSGi Framework} diktiert, was die Basis
+der Anwendung bilden soll.
+
+\input{chapters/sections/subsections/subsubsections/osgi}
 
 \section{bioinformatische Methoden}
 Wie bereits in Kapitel \ref{chp:softwarearchitektur} erläutert, sollen die in
