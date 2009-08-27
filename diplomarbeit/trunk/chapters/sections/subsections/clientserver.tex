@@ -9,19 +9,18 @@ Implementierung festgelegt.
 Die \first{Pipes} des \name{pipes and filters} Pattern werden somit zu einem
 zentralen \first{Server} zusammengefasst und bilden das statische
 Ausführungsgerüst.
-Die \first{Filter} der Pipeline representieren die \first{Clients}.
-Es können beliebig viele Clients am Server anmeldet werden, wodurch die
-eigentliche Pipeline aufgebaut wird.
+\first{Clients} werden durch die \first{Steps} repräsentiert. \seec{chp:pipes
+and filters} Es können beliebig viele Clients am Server anmeldet werden, wodurch
+die eigentliche Pipeline aufgebaut wird.
 
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[scale=0.6]{pics/serverClient2.png}
 	\caption[Client Server]{
-	\textbf{Client-Server Pattern.}
-	Abstraktion durch das Client-Server-Pattern: einzelne \name{Filter} der
-	Pipeline können sich dynamisch an einem \name{Server} an- und abmelden.
-	Der Server organisiert die angemeldeten Clients nach deren Anmeldung zu der
-	eigentlichen Pipeline.}
+	\textbf{Abstraktion durch das Client-Server-Pattern.}
+	Einzelne \name{Steps} können sich
+	dynamisch an einem \name{Server} an- und abmelden. Der Server organisiert die
+	angemeldeten Clients nach deren Anmeldung zu der eigentlichen Pipeline.}
 	\end{center}
 	\label{fig:clientServer2}
 \end{figure}
@@ -31,11 +30,11 @@ Die Anforderungen an den Server gliedern sich in zwei Teilbereiche:
 \begin{description}
 \item[Organisation und Synchronisation der Client Ausführung]
 Die Ausfürhrung der angemeldeten Steps kann sequenziell oder
-parallel erfolgen, je nachdem, welche \first{execution preconditions} für den
-jeweiligen Step erforderlich sind und ob die zur Ausführung benötigten Daten
-eventuell erst durch einen anderen Step bereitgestellt werden müssen.
+parallel erfolgen, je nachdem, welche \name{preconditions} für den jeweiligen
+Step erforderlich sind und ob die zur Ausführung benötigten Daten eventuell
+erst durch einen anderen Step bereitgestellt werden müssen.
 Vor der eigentlichen Ausführung wird der Server somit zum einen die
-\name{execution preconditions} prüfen, zum anderen, ob der Step überhaupt zur Ausführung
+\name{preconditions} prüfen, zum anderen, ob der Step überhaupt zur Ausführung
 gebracht werden muss, oder ob die zu erwartenden Ergebnisse bereits in selber
 oder in anderer Form vorhanden sind.
 \item[Datenverwaltung] Die Ergebnisse der einzelnen Steps werden zentral durch
@@ -46,26 +45,11 @@ der Pipeline Datenverlust zu verhindern.
 \end{description}
 
 \paragraph{Client}
-Auf der Clientseite stehen die einzelnen \first{Filter} der Pipeline, im
-folgenden \first{Steps} genannt \todo{hmmm}. Jeder Step soll technisch
-gesehen einem oder mehreren OSGi-Bundles entsprechen.
-\index{Step}
-\index{Filter}
-\index{Client}
-\index{Bundle}
-\index{OSGi-Bundle}
-Wird das Bundle durch das OSGi-Framework gestartet, soll sich der Step am Server
-anmelden. Der Step stellt dabei entsprechende \name{call-back-Methoden} für die
-eigentliche Ausführung, Überprüfung der \name{execution preconditions} und
-Ähnlichem bereit.
-\index{Server}
-\index{OSGi Framework}
-\index{call back method}
-Wann diese Methoden aufgerufen werden, obliegt so allein
-dem Server.
-Als Prameter der call back methoden wird die Sequenz, sowie das zentrale
-Datenobjekt, im Folgenden \first{Data bean} \todo{hmmm} genannt,
-übergeben.
+Auf der Clientseite stehen die einzelnen Steps, die eine gemeinsame
+Schnittstelle zur Kommunikation mit dem Server implementieren über welche der
+Server \name{preconditions} überprüfen, \name{solutions}
+\seec{chp:softwarearchitektur} entgegennehmen und die eigentliche Ausführung
+anstossen kann.
 
 %%
 %\begin{figure}[htbp]
