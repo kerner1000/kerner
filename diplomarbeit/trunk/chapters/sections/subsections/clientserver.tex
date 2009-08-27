@@ -1,16 +1,30 @@
 \subsection{Client-Server}
-Die \first{Pipes} des \name{pipes and filters} Pattern werden zu einem
-\first{Server} zusammengefasst und bilden das statische Ausführungsgerüst.
-Ein \first{Client} stellt einen \first{Filter} des \name{pipes and filters}
-Pattern dar.
-Die einzelnen Clients sind dynamisch und somit nicht Teil der
-statischen Kernanwenung.
-\index{Filter}
-\index{Step}
-\index{Client}
+Durch ihre dynamische Struktur kann die Pipeline auf einer weiteren
+Abstraktionsschicht durch das \first{Client-Server}-Pattern dargestellt werden:
+Ein statischer Server kommuniziert über eine definierte Schnittstelle mit
+dynamischen Clients.
+Clients können kommen und gehen und sind nicht auf eine konkrete
+Implementierung festgelegt. 
+
+Die \first{Pipes} des \name{pipes and filters} Pattern werden somit zu einem
+zentralen \first{Server} zusammengefasst und bilden das statische
+Ausführungsgerüst.
+Die \first{Filter} der Pipeline representieren die \first{Clients}.
 Es können beliebig viele Clients am Server anmeldet werden, wodurch die
 eigentliche Pipeline aufgebaut wird.
-\todo{ein alles in allem doofer Absatz\ldots}
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[scale=0.6]{pics/serverClient2.png}
+	\caption[Client Server]{
+	\textbf{Client-Server Pattern.}
+	Abstraktion durch das Client-Server-Pattern: einzelne \name{Filter} der
+	Pipeline können sich dynamisch an einem \name{Server} an- und abmelden.
+	Der Server organisiert die angemeldeten Clients nach deren Anmeldung zu der
+	eigentlichen Pipeline.}
+	\end{center}
+	\label{fig:clientServer2}
+\end{figure}
 
 \paragraph{Server}
 Die Anforderungen an den Server gliedern sich in zwei Teilbereiche:

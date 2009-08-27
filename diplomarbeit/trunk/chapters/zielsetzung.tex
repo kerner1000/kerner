@@ -10,7 +10,7 @@ Personen außerhalb des Institutes durchgeführt.
 
 Ziel dieser Arbeit war es daher, eine Anwendung zu entwerfen, die
 innerhalb des Institutes verfügbar ist. Neben der unmittelbaren Verfügbarkeit
-der Anwendung standen hier verschiedene andere Anforderungen im Vordergrund:
+standen hier verschiedene andere Anforderungen im Vordergrund:
 
 Der \enquote{Input}, also die Eingangsdaten, die die Software für ihre
 Berechungen benötigt, soll möglichst gering gehalten werden, da zu denen am
@@ -18,7 +18,21 @@ Institut untersuchten Pflanzen und Pilzen bis dato oft gar keine bis sehr wenige
 Daten verfügbar sind.
 Der Input soll sich also im Wesentlichen auf die genomische Sequenz selbst, mit
 unter auch auf einige EST-Sequenzen
-\footnote{\todo{EST}}
+\footnote{\first{EST}, \name{Expressed Sequence Tags} sind
+Nukleotidsequencen, die Aufschluss über die genomische Sequenz
+\enquote{aktiver}, bzw. transkribierter Gene liefern können.
+\index{EST|see{Expressed Sequence Tag}}
+\index{Expressed Sequence Tag}
+\index{Sequenz!genomisch}
+\index{Sequenz!nukleotid}
+Um die EST-Sequenz zu erhalten, wird mRNA \todo{erklären?} aus einer Probe
+isoliert, die dann mittels RT-PCR \todo{erklären?} in cDNA
+\todo{erklären?} übersetzt wird.
+\index{mRNA}
+\index{cDNA}
+\index{RT-PCR}
+Die cDNA kann dann beliebig vervielfältigt und
+mittles üblicher Verfahren sequenziert werden. \todo{ein cite wäre schön..}}
 beschränken.
 \index{Sequenz!genomisch}
 \index{EST|see{Expressed Sequence Tag}}
@@ -27,7 +41,7 @@ beschränken.
 Die Anwendung soll generell modular und möglichst generisch strukturiert sein.
 Auf diese Weise soll zum einen ermöglicht werden, sie mit vertretbarem
 Aufwand für verschiedene Anforderungen und Einsatzumgebungen zu konfigurieren,
-zum Anderen soll die Anwendung möglichst einfach mit zusätzlichen Funktionen
+zum Anderen soll sie möglichst einfach mit zusätzlichen Funktionen
 erweiterbar sein.
 Zu diesem Zweck soll die Anwendung über ein \first{Plug-in} System verfügen, in
 dem Funktionalität über separate Softwarepackete hinzugefügt und konfiguriert
@@ -57,11 +71,9 @@ LSF} {http://www.platform.com/Products/platform-lsf}}
 Die Anwendung soll in der Lage sein, einzelne oder mehrere Prozesse auf dem
 compute cluster auszuführen, um lokalen Ressourcen möglichst wenig zu
 belasten. Der Gebrauch des clusters soll hierbei aber optional sein, um die
-Portierbarkeit der Anwendung nicht unnötig einzuschränken. 
+Portierbarkeit der Software nicht unnötig einzuschränken. 
 
-Als \name{Proof of Concept} wird die Anwendung in ein aktuelles Projekt
+Als \name{proof of concept} wird die Anwendung in ein aktuelles Projekt
 eingegleidert, in dem Große Teile des Genoms von \name{Colletotrichum
 higginsianum} annotiert werden sollen. \todo{mehr dazu?}
 \index{\name{Colletotrichum higginsianum}}
-
-\todo{Anwendung, Anwendung, Anwendung}
