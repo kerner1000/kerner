@@ -1,36 +1,30 @@
 \section{Step und AbstractStep}
-Ein Step implementiert das gleichnaminge Interface, das drei call back
-Methoden bereitstellt, die nach der Anmeldung am Server durch diesen ausgeführt
-werden.
+Ein \name{Step} implementiert das gleichnaminge Interface, das drei
+Call-Back-Methoden bereitstellt, die nach der Anmeldung am Server durch diesen
+ausgeführt werden.
 \index{Interface!Step}
 Als Parameter erhalten diese Methoden jeweils eine Instanz auf den
-pipelinezentralen \first{DataProxy}.
+pipelinezentralen \first{DataProxy} \seec{chp:data}.
 \index{DataProxy}
 \index{DataBean}
-\lstinputlisting[frame=single,label=step,caption=Step]{code/step}
 
-Die Kernanwendung \todo{wasdas} stellt eine abstrakte Klasse bereit, von der
-eine Implementierung von Step erben kann.
+\lstinputlisting[frame=single,label=step,caption=Das Step Interface]{code/step}
+
+\code{AbstractStep} stellt einen abstrakten Prototyp für eine Implementierung
+von \code{Step} bereit.
 \index{Klasse!AbstractStep}
 Diese Klasse enthält bereits wiederkehrende Funktionalitäten wie das
 Anmelden am Server, das Bereitstellen eines Loggers oder die Verwaltung von
 Properties.
-Eine Implementierung von \name{AbstractStep} implementiert neben \code{Step} das
-Interface \code{BundleActivator}, wodurch diese einfach als
-\first{Activator Klasse}
-\footnote{\todo{Activator class blabla}}
-in neuen StepBundles verwendet werden kann.
-\todo{wasn das fürn satzbau}
-\index{Interface!BundleActivator}
-
 \code{AbstractStep} ist so konzipiert, dass alle Aspkete, die spezifisch für
-das OSGi Framework sind, wie das Abfragen der Server Services \todo{name?},
-bereits in dieser Klasse implementiert sind.
-Wird eine neuer Step entworfen, der von \code{AbstractStep} erbt, müssen nur
-die drei Methoden aus dem Interface \code{Step} implementiert werden, sowie
-diese Klasse als \name{Bundle Activator} \todo{schon erklärt?} in der
-\name{MANIFEST.MF} definiert werden.
-Ein neu entworfener Pipelinestep \todo{name?} kann sich somit vollständig auf
-die Implementierung der Funktionaliät dieses Steps konzentrieren.
-Es entsteht kein programmatischer overhead \todo{name?} durch das OSGi
-Framework. \todo{Satz komisch}
+das OSGi Framework sind, wie das Beziehen der Referenzen für den
+Server oder den \name{DataProxy}, bereits in dieser Klasse
+implementiert sind.
+Wird eine neuer \name{Step} entworfen, der von \code{AbstractStep} erbt, müssen
+nur die drei Methoden des Interfaces \code{Step} implementiert werden.
+Ein neu entworfener \name{Step} kann sich somit vollständig auf
+die Implementierung der eigentlichen Funktionaliät innerhalb der Pipeline konzentrieren.
+Es entsteht kein programmatischer Overhead durch das OSGi
+Framework.
+
+

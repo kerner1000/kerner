@@ -7,16 +7,18 @@
 
 \section{Verzeichnisstruktur}
 Technisch gesehen ist die Annotationspipeline OSGi-typisch aus
-mehreren jar-Dateien (Bundles) sowie wenigen Konfigurationsdateien aufgebaut.
+mehreren jar-Dateien (\name{Bundles} \seec{chp:osgi}) sowie wenigen
+Konfigurationsdateien aufgebaut.
 Die einzelnen Bundles sind zugunsten der Überischt in verschiedenen
 Unterverzeichnissen abgelegt.
+
 
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[scale=0.7]{pics/coreDir.png}
-	\caption[coreDir]{
-	\textbf{coreDir.}
-	something.}
+	\caption[Verzeichnisstruktur]{
+	\textbf{Die Verzeichnisstruktur der Pipeline.}
+	}
 	\end{center}
 	\label{fig:coreDir}
 \end{figure}
@@ -27,19 +29,28 @@ die wiederum das OSGi Framework startet:
 start.sh:
 java -Xmx1024m -jar org.eclipse.osgi_3.4.0.v20080605-1900.jar
 -clean\end{verbatim}
-Das OSGi Framework ist so konfiguriert (\code{configuration/config.ini})
-\todo{make me a footnote}, dass es beim Starten automatisch das Bundle
+Das OSGi Framework ist so konfiguriert (\code{configuration/config.ini}), dass
+es beim Starten automatisch das Bundle
 \begin{verbatim}
 de.mpg.mpiz.koeln.anna.core.starter_2.0.1.jar
 \end{verbatim}
 installiert und startet.
 Dieses Bundle initialisiert und startet nun die Pipeline, indem es alle Bundles,
-die sich in den Verzeichnissen \code{00-} bis \code{06-} befinden, startet
-\todo{startet startet startet}. Im Verzeichnis \code{06-} sollten sich dabei
-alle Step-Bundles befinden, die in der Pipeline genutzt werden sollen.
+die sich in den Verzeichnissen \code{00-} bis \code{06-} befinden,
+installiert und startet.
+Im Verzeichnis \code{06-} sollten sich dabei alle
+Bundles befinden, die Implementierungen von Step bereitstellen und in der
+Pipeline genutzt werden sollen.
 
 \section{Implementierungen von Step}
 \todo{\dots}
+
+\subsection{Step Commons}
+
+\subsection{Step Commons LSF}
+
+\subsection{InputSequenceReader}
+
 \subsection{Conrad}
 Conrad
 (\htmladdnormallink{http://www.broadinstitute.org/annotation/conrad/}{http://www.broadinstitute.org/annotation/conrad/})
@@ -160,8 +171,12 @@ Basen-\enquote{Zustände} zu den tatsächlichen Basen-Zuständen.
 	\label{fig:agree2}
 \end{figure}
 
-\paragraph{Conrad-local}
-\paragraph{Conrad-lsf}
+\paragraph{Conrad local}
+
+\paragraph{Conrad LSF}
+
+\paragraph{Get Results}
+
 \subsection{RepeatMasker}
 RepeatMasker
 (\htmladdnormallink{http://www.repeatmasker.org/}{http://www.repeatmasker.org/})
@@ -175,9 +190,11 @@ Letzteres wird beispielsweise von \textit{BLAST} erkannt, was zur Folge hat,
 dass diese Sequenzabschnitte nicht in der Suche berücksichtigt werden.
 Die ursprüngliche Sequenzinformation bleibt auf diese Weise	erhalten.
 
-\paragraph{RepeatMasker-local}
+\paragraph{RepeatMasker local}
 
-\paragraph{RepeatMasker-lsf}
+\paragraph{RepeatMasker LSF}
+
+\paragraph{Get Results}
 
 \section{Libraries}
 Neben den Basisfunktionalitäten und den bereits erwähnten Steps

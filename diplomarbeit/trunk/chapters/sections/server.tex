@@ -1,66 +1,62 @@
 \section{Server}
-Der Pipelineserver \todo{naming} ist über zwei OSGi Services realisiert:
+Der Server ist über zwei OSGi Services \seec{chp:osgi}
+realisiert:
 Der \first{StepExecutor Service} sowie der \first{DataProxy Service}.
 \index{Pipelineserver}
 \index{OSGi Service}
 \index{StepExecutor Service}
 \index{DataProxy Service}
-StepBundles \todo{naming} erlangen somit über die OSGi Service Registry
-Zugriff auf die Funktionen des Servers.
+Der Zugriff auf den Server erfolgt somit über die \name{OSGi Service
+Registry}.
 
 \subsection{DataProxy Service}
-Der \first{DataProxy Service} steuert den Zugriff auf den zentralen
-\name{DataProxy}.
-\index{DataProxy}
-\index{DataProxy Service}
-Die Methoden von \name{Step} bekommen als Parameter eine Referenz auf den
-\name{DataProxy}.
-Implementierungen von \code{Step} müssen daher nicht den \name{DataProxy
-Service} von der Service registry abfragen.
+Der \first{DataProxy Service} stellt die Referenz auf den \name{DataProxy}
+bereit.
+Dieser Service muss allerdings nicht duch die \name{Steps} selbst abgefragt
+werden. Die Call-Back-Methoden von \code{Step} erhalten als Parameter bereits
+diese Referenz.
 
 \subsection{StepExecutor Service}
-Der StepExecutor Service implementiert Methoden zur An- und Abmeldung eines
-Steps am Pipelineserver \todo{naming}.
-\index{Pipelineserver}
-\index{StepExecutor Service}
-\lstinputlisting[frame=single,label=server,caption=Server]{code/server}
-Ein Step Bundle \todo{naming} wird typischerweise nach seiner Aktivierung über
-die Service Registry den StepExecutor Service abfragen, und sich selbst über
-dessen \code{registerStep} Methode am Server anmelden.
-Nach der Anmeldung des Steps erstellt der Server einen neuen Thread, der den
-Step gegebenenfalls zur Ausführung bringt.
+Der \name{StepExecutor Service} implementiert Methoden zur An- und Abmeldung
+der \name{Steps} am Server.
+
+\lstinputlisting[frame=single,label=stepExecutorService,caption=Das
+Interface \code{StepExecutorService}]{code/server}
+
+Ein \name{Step} wird typischerweise nach seiner Aktivierung
+über die \name{Service Registry} den \name{StepExecutor Service} abfragen, und
+sich selbst über dessen \code{registerStep} Methode am Server anmelden.
+Nach der Anmeldung des \name{Steps} erstellt der Server einen neuen Thread, der
+den \name{Step} gegebenenfalls zur Ausführung bringt.
 Dabei wird zunächst überprüft, ob der Step zu diesem Zeitpunkt überhaupt
 ausgeführt werden muss.
 Die Methode \code{canBeSkipped}, die durch Step implementiert wird, gibt
 darüber Auskunft. 
-\lstinputlisting[frame=single,label=step,caption=Step]{code/step}
 Typischerweise wird diese Methode \code{false} zurückgeben, wenn das zu
-erwartende Step result \todo{naming} bereits im \name{DataBean} vorhanden ist.
+erwartende Ergebnis bereits in \name{DataBean} vorhanden ist.
 Das ist beispielsweise der Fall, wenn dieser Step bei einem vorherigen Lauf,
-der allerdings nicht vollständig beendet wurde, die Ergebnisse schon im
+der allerdings nicht vollständig beendet wurde, die Ergebnisse schon in
 \name{DataBean} abgelegt hat.
 \index{DataBean}
 \index{Methode!boolean canBeSkipped(DataProxy d)}
 
 Liefert \code{canBeSkipped} \code{false}, so werden als nächstes die nötigen
-\first{execution preconditions} geprüft.
-\index{execution precondition}
+\name{preconditions} \seec{chp:softwarearchitektur} geprüft.
 Dies geschieht über die Methode \code{requirementsSatified}.
 Die Stepimplementierung sollte an dieser Stelle überprüfen, ob alle für die
-Ausführung benötigten Daten bereits im \name{Databean} abgelegt sind.
-\todo{Umsetzung von DataBean, DataProxy}
+Ausführung benötigten Daten bereits in \name{Databean} abgelegt sind.
 \index{Methode!boolean requirementsSatisfied(DataProxy d)}
-\index{DataBean}
 
 Liefert \code{requirementsSatisfied} \code{false}, wird der ausführende Thread
 schlafen gelegt, bis ein anderer Step erfolgreich beendet wurde.
-Daraufhin wird eine erneute Prüfung der requirements durchgeführt.
-Dieses Szenario wird solange wiederholt, bis \code{requirements Satisfied}
+Daraufhin wird eine erneute Prüfung der \name{preconditions} durchgeführt.
+
+Dieses Szenario wird solange wiederholt, bis \code{requirementsSatisfied}
 \code{true} liefert.
 Die eigentliche Auführung des Steps kann nun beginnen.
 \index{Methode!boolean requirementsSatisfied(DataProxy d)}
 Der Server ruft dazu die Methode \code{run} auf, die nach einer erfolgreichen
-Ausführung \code{true} zurückliefert und die gewonnenen Ergebnisse im
+Ausführung \code{true} zurückliefert und die gewonnenen Ergebnisse in
 \name{DataBean} ablegt.
 \index{Methode!boolean run(DataProxy d)}
-\index{DataBean}
+

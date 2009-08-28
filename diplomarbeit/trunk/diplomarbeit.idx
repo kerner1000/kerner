@@ -81,27 +81,12 @@
 \indexentry{Idiom|see{Entwurfsmuster}}{15}
 \indexentry{Filter|hyperpage}{16}
 \indexentry{Platform LSF|hyperpage}{16}
-\indexentry{Application Framework|hyperpage}{19}
-\indexentry{Equinox|hyperpage}{19}
-\indexentry{OSGi|hyperpage}{19}
-\indexentry{OSGi Framework|see{OSGi}}{19}
-\indexentry{Eclipse|hyperpage}{19}
-\indexentry{OSGi Alliance|hyperpage}{19}
-\indexentry{OSGi|see{OSGi Alliance}}{19}
-\indexentry{Open Services Gateway|see{OSGi Alliance}}{19}
-\indexentry{OSGi Service Platform|hyperpage}{19}
-\indexentry{Bundle|hyperpage}{19}
-\indexentry{Dienst|hyperpage}{20}
-\indexentry{Registry|see{Service Registry}}{20}
-\indexentry{Service Registry|hyperpage}{20}
-\indexentry{Service|hyperpage}{20}
 \indexentry{Bundle|hyperpage}{20}
-\indexentry{MANIFEST.MF|hyperpage}{21}
-\indexentry{Service Registry|hyperpage}{21}
-\indexentry{Bundle|hyperpage}{21}
+\indexentry{MANIFEST.MF|hyperpage}{20}
+\indexentry{Bundle|hyperpage}{20}
 \indexentry{Service Interface|hyperpage}{21}
-\indexentry{OSGi Service Platform|hyperpage}{22}
-\indexentry{\name{C. higginsianum}|see\name{Colletotrichum higginsianum}}{22}
+\indexentry{OSGi Service Platform|hyperpage}{21}
+\indexentry{\name{C. higginsianum}|see\name{Colletotrichum higginsianum}}{23}
 \indexentry{intrinsisch|hyperpage}{23}
 \indexentry{homologiebasiert|hyperpage}{23}
 \indexentry{Conditional Random Field|hyperpage}{23}
@@ -109,27 +94,19 @@
 \indexentry{DataBean|hyperpage}{24}
 \indexentry{Klasse!DataBean|hyperpage}{24}
 \indexentry{JavaBean|hyperpage}{24}
-\indexentry{Interface!Step|hyperpage}{25}
-\indexentry{DataProxy|hyperpage}{25}
-\indexentry{DataBean|hyperpage}{25}
+\indexentry{Interface!Step|hyperpage}{27}
+\indexentry{DataProxy|hyperpage}{27}
+\indexentry{DataBean|hyperpage}{27}
 \indexentry{Klasse!AbstractStep|hyperpage}{27}
-\indexentry{Interface!BundleActivator|hyperpage}{27}
 \indexentry{Pipelineserver|hyperpage}{28}
 \indexentry{OSGi Service|hyperpage}{28}
 \indexentry{StepExecutor Service|hyperpage}{28}
 \indexentry{DataProxy Service|hyperpage}{28}
-\indexentry{DataProxy|hyperpage}{28}
-\indexentry{DataProxy Service|hyperpage}{28}
-\indexentry{Pipelineserver|hyperpage}{28}
-\indexentry{StepExecutor Service|hyperpage}{28}
 \indexentry{DataBean|hyperpage}{29}
 \indexentry{Methode!boolean canBeSkipped(DataProxy d)|hyperpage}{29}
-\indexentry{execution precondition|hyperpage}{29}
 \indexentry{Methode!boolean requirementsSatisfied(DataProxy d)|hyperpage}{29}
-\indexentry{DataBean|hyperpage}{29}
 \indexentry{Methode!boolean requirementsSatisfied(DataProxy d)|hyperpage}{29}
 \indexentry{Methode!boolean run(DataProxy d)|hyperpage}{29}
-\indexentry{DataBean|hyperpage}{29}
 \indexentry{Conrad|hyperpage}{31}
 \indexentry{de novo|hyperpage}{31}
 \indexentry{gene caller|hyperpage}{31}

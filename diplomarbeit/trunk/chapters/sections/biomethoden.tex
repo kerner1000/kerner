@@ -1,0 +1,41 @@
+\section{bioinformatische Methoden}
+Wie bereits erläutert \seec{chp:softwarearchitektur}, sollen die in
+der Anwendung verwendeten Methoden zur Annotation dynamisch als \name{Step}
+implementiert werden. Die Pipeline ist somit nicht auf bestimmte Methoden
+beschränkt, vielmehr sind diese direkt durch die in der Pipeline verwendeten
+Steps definiert \seef{fig:pipesFilter21}.
+
+Aufgrund der konkreten Problemstellung durch die Zielsetzungen bezüglich der
+Annotation von \name{C. higginsianum}, sowie als \name{Proof of Concept},
+sollen einige, speziell auf die Annotation von \name{C. higginsianum} und den
+hierzu verfügbaren Daten abgestimmte Steps implementiert werden.
+\index{\name{C. higginsianum}|see\name{Colletotrichum higginsianum}}
+Dabei soll die Annotation vorrangig \first{intrinsisch} \seec{chp:intrinsisch}
+erfolgen, da homologiebasierte Ansätze in diesem Fall aus verschiedenen Gründen
+wenig vielversprechend sind:
+\index{intrinsisch}
+\index{homologiebasiert}
+\begin{itemize}
+\item \todo{datenbanken haben nix}
+\item \todo{ähm\ldots wars das schon?}
+\end{itemize}
+Für die intrinsische Genvorhersage sollen \first{Conditional Random
+Fields}, oder \first{Hidden Markov Models} zum
+Einsatz kommen.
+\index{Conditional Random Field}
+\index{Hidden Markov Model}
+Diese Verfahren, insbesondere \name{Conditional Random Fields}, stellen zum
+jetztigen Zeitpunkt die beste Möglichkeit zur intrinischen Annotation dar.
+\todo{mehr?}
+
+Das eigentliche \name{gene finding} soll durch verschiedene weitere Ansätze
+unterstützt, bzw, verfeinert werden:
+
+\begin{itemize}
+  \item \todo{mask repetitive elemente}
+  \item \todo{EST mapping}
+  \item \todo{andere, maybe BLAST?}
+\end{itemize}
+
+
+

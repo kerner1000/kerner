@@ -15,7 +15,7 @@ einer konkreten Aufgabenstellung.
 \index{Muster!architektur}
 Die zugrundeliegenden Probleme sind dabei organisatorischer und
 architektonischer Art, wo hingegen \first{Entwursmuster}, oder
-auch \fisrt{Idiome}, Muster für die Lösung sehr granularer und konkreter
+auch \first{Idiome}, Muster für die Lösung sehr granularer und konkreter
 Probleme darstellen.
 \index{Muster!enturfs}
 \index{Idiom|see{Entwurfsmuster}}
@@ -27,53 +27,21 @@ Abstraktionsebenen beschreiben lässt:
 \index{Softwarearchitekur}
 \index{Architektur|see{Softwarearchitekur}}
 
-\todo{einzelne Muster generell erklären?}
-
 \input{chapters/sections/subsections/pipesandfilters}
 \input{chapters/sections/subsections/clientserver}
 
 \subsection{Serviceorientierte Architektur}
-Die unterste Abstraktionebene wird durch eine \first{serviceorientierte
-Architekur} gebildet.
-Diese Architektur wird massgeblich durch das \first{OSGi Framework}
-diktiert, was die Basis der Anwendung bilden soll.
+
+Um das benötigte Plug-in System zu realisieren \seec{chp:zielsetzung}, boten
+sich verschiedene Application Frameworks an, die eine entsprechende Funktionalität
+bereitstellen und somit als Programmbasis für die  Pipeline dienen konnten.
+Die Wahl fiel hier auf das \first{OSGi Framework} \first{Equinox}, welches von
+der \name{Eclipse Fundation} entwickelt wird und auch die Basis für die
+Entwickungsumgebung \name{Eclipse} darstellt.
 
 \input{chapters/sections/subsections/subsubsections/osgi}
 
-\section{bioinformatische Methoden}
-Wie bereits in Kapitel \ref{chp:softwarearchitektur} erläutert, sollen die in
-der Anwendung verwendeten Methoden zur Annotation dynamisch als \name{Step}
-implementiert werden. Die Pipeline ist somit nicht auf bestimmte Methoden
-beschränkt, vielmehr sind diese direkt durch die in der Pipeline verwendeten
-Steps definiert \seef{fig:pipesFilter21}.
+\input{chapters/sections/biomethoden}
 
-Aufgrund der konkreten Problemstellung durch die Zielsetzungen bezüglich der
-Annotation von \name{C. higginsianum}, sowie als \name{Proof of Concept},
-sollen einige, speziell auf die Annotation von \name{C. higginsianum} und den
-hierzu verfügbaren Daten abgestimmte Steps implementiert werden.
-\index{\name{C. higginsianum}|see\name{Colletotrichum higginsianum}}
-Dabei soll die Annotation vorrangig \first{intrinsisch} \seec{chp:intrinsisch}
-erfolgen, da homologiebasierte Ansätze in diesem Fall aus verschiedenen Gründen
-wenig vielversprechend sind:
-\index{intrinsisch}
-\index{homologiebasiert}
-\begin{itemize}
-\item \todo{datenbanken haben nix}
-\item \todo{ähm\ldots wars das schon?}
-\end{itemize}
-Für die intrinsische Genvorhersage sollen \first{Conditional Random
-Fields} \seec{chp:crf}, oder \first{Hidden Markov Models} \seec{chp:hmm} zum
-Einsatz kommen.
-\index{Conditional Random Field}
-\index{Hidden Markov Model}
-Diese Verfahren, insbesondere \name{Conditional Random Fields}, stellen zum
-jetztigen Zeitpunkt die beste Möglichkeit zur intrinischen Annotation dar.
-\todo{mehr?}
 
-Das eigentliche gene finding soll durch verschiedene, weitere Ansätze
-unterstützt, bzw, verfeinert werden:
-
-\todo{mask repetitive elemente}
-
-\todo{EST mapping}
  

@@ -1,13 +1,8 @@
 \subsection{Pipes and Filters} \label{chp:pipes and filters}
 Die höchste Abstraktion stellt das \first{Pipes and
-Filters}-Patten dar:
-\index{Architekturmuster!Pipes and Filters}
-
-\begin{figure}[htbp]
-	\begin{center}
-		\includegraphics[scale=0.7]{pics/pipesFilter3.png}
-	\caption[Pipes and Filter]{
-	\textbf{Das Pipes and Filter Pattern}
+Filters}-Patten dar
+\footnote{
+\textbf{Das Pipes and Filter Pattern}
 	ist ein Architekturmuster für Systeme, die einen Strom von Daten verarbeiten.
 	Jeder Verarbeitungsschritt ist in einen eigenen Filterkomponenten gekapselt.
 	Die Daten werden dabei durch \name{Pipes} geleitet, die benachbarte
@@ -15,7 +10,16 @@ Filters}-Patten dar:
 	Durch die Kapselung der Filter können diese frei kombiniert und
 	getauscht werden, wodurch prinzipiell ähnliche, im Detail jedoch
 	unterschiedliche Systeme entstehen.
-	\citep{buschmann_pattern-oriented_1996}}
+	\citep{buschmann_pattern-oriented_1996}
+}:
+\index{Architekturmuster!Pipes and Filters}
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[scale=0.7]{pics/pipesFilter3.png}
+	\caption[Pipes and Filter Pattern]{
+	\textbf{Das Pipes and Filters Pattern.}
+	}
 	\end{center}
 	\label{fig:pipesFilter}
 \end{figure}
@@ -64,7 +68,7 @@ Filters}-Pattern losgelösten Bezeichnung, sollen die \name{Filter} im folgenden
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[scale=0.7]{pics/pipesFilter21.png}
-	\caption[Pipes and Filter 2]{
+	\caption[Dynamisches Pipes and Filter Pattern]{
 	\textbf{Das dynamische Pipes and Filters Pattern.}
 	Die Pipeline teilt sich in einen statischen (\name{Pipes}) und einen
 	dynamischen Teil (\name{Filter}).

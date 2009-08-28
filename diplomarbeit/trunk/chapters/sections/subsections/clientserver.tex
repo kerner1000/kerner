@@ -1,6 +1,10 @@
-\subsection{Client-Server}
+\subsection{Client-Server-Modell}
 Durch ihre dynamische Struktur kann die Pipeline auf einer weiteren
-Abstraktionsschicht durch das \first{Client-Server}-Pattern dargestellt werden:
+Abstraktionsschicht durch das \first{Client-Server-Modell}
+\footnote{
+\todo{description}
+}
+dargestellt werden:
 Ein statischer Server kommuniziert über eine definierte Schnittstelle mit
 dynamischen Clients.
 Clients können kommen und gehen und sind nicht auf eine konkrete
@@ -16,8 +20,8 @@ die eigentliche Pipeline aufgebaut wird.
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[scale=0.6]{pics/serverClient2.png}
-	\caption[Client Server]{
-	\textbf{Abstraktion durch das Client-Server-Pattern.}
+	\caption[Client-Server-Modell]{
+	\textbf{Abstraktion durch das Client-Server-Modell.}
 	Einzelne \name{Steps} können sich
 	dynamisch an einem \name{Server} an- und abmelden. Der Server organisiert die
 	angemeldeten Clients nach deren Anmeldung zu der eigentlichen Pipeline.}

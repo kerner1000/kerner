@@ -1,38 +1,10 @@
-\subsubsection{Das OSGi Framework}
-
-Um das benötigte Plug-in System zu realisieren \seec{chp:zielsetzung}, boten
-sich verschiedene \first{Application Frameworks} an, die eine entsprechende Funktionalität
-bereitstellen und somit als Programmbasis für die  Pipeline dienen konnten.
-\index{Application Framework}
-Die Wahl fiel hier auf das \first{OSGi Framework} \first{Equinox}, welches von
-der \name{Eclipse Fundation} entwickelt wird und auch die Basis für die
-Entwickungsumgebung \name{Eclipse} darstellt.
-\index{Equinox}
-\index{OSGi}
-\index{OSGi Framework|see{OSGi}} 
-\index{Eclipse}
-
-\name{Eclipse Equinox} ist in Java geschrieben, was der Portierbarkeit der
-Pipeline entgegenkommt. Ausserdem bietet die Framework-Architektur maximale
-Modularisierung, wodurch sich Anwendungen auf Basis von \name{Eclipse Equinox}
-durch hervorragende Erweiterbarkeit und Skalierbarkeit auszeichnen.
-
-%\begin{wrapfigure}{r}{9.0cm}
-%	\begin{center}
-%		\includegraphics[width=8.5cm]{pics/osgi_layer.png}
-%	\caption{something, citing}
-%	\end{center}
-%	\label{fig:hmm}
-%\end{wrapfigure}
+\subsubsection{Das OSGi Framework}\label{chp:osgi}
 
 Die \name{OSGi Alliance}, früher \enquote{\textit{Open Services Gateway
 initiative}}, ist ein Zusammenschluß verschiedener Unternehmen, wie z.B. IBM,
 Oracle oder Sun Microsystems.
-\index{OSGi Alliance}
-\index{OSGi|see{OSGi Alliance}}
-\index{Open Services Gateway|see{OSGi Alliance}}
 Sie spezifiziert die \first{OSGi Service Platform}, eine Java-basierte
-Softwareplattform, die über ein \first{Komponentenmodell}
+Softwareplattform, die nach einem \first{Komponentenmodell}
 % footnote is von wikipedia !!!
 \footnote{nach Gruhn und Thiel\citep{gruhn_komponentenmodelle_2000}:
 \enquote{Ein Komponentenmodell legt einen Rahmen für die Entwicklung [..] von
@@ -44,42 +16,35 @@ organisiert ist.
 Einzelne Komponenten, sogenannte \first{Bundles}, können der Anwendung
 dynamisch hinzugefügt und wieder entfernt werden ohne dass ein erneutes
 Kompilieren oder Starten der Anwendung nötig ist.
-%%% hiernochmal %%% 
 Abhängigkeiten zwischen Bundles werden dabei automatisch aufgelöst; ein
 intelligentes Versionsmanagement steht ebenfalls zur Verfügung.
-\index{OSGi Service Platform}
-\index{Bundle}
 
-Neben dem Komponentenmodell verwirklicht die Architektur des OSGi Frameworks
-vor allem Elemente einer \first{Service Orientierten Architektur}
-\footnote{Unter \enquote{serviceorientierte Architektur} oder auch
-\enquote{dienstorientierte Architektur} versteht man ein Softwaredesign, dass
+Die \name{OSGi Service Platform} weisst ausserdem eine serviceorientierte
+Architektur \footnote{Unter \first{serviceorientierte Architektur} oder auch
+\first{dienstorientierte Architektur} versteht man ein Softwaredesign, dass
 sich durch sogenannte Dienste oder auch Services auszeichnet. Diese können
-appliktaions-global an einer Registry angemeldet und abgefragt werden.
-Sie stellen dabei eine Schnittstelle zu bestimmten Funktionen bereit, ohne
-dabei die zu Grunde liegende Implementierung preiszugeben.}
-.
-So stellt das Framework eine globale Registry (\first{Service Registry})
+appliktaions-global an einer Registry angemeldet und abgefragt werden. Sie
+stellen dabei eine Schnittstelle zu bestimmten Funktionen bereit, ohne dabei
+die zu Grunde liegende Implementierung preiszugeben.}
+auf: 
+Sie stellt eine globale Registry (\first{Service Registry})
 bereit, an der Bundles \first{Dienste} bzw. \first{Services} anmelden und
 abfragen können.
-%Ein \enquote{Dienst} ist hierbei eine Schnittstelle,
-%über die eine bestimmte Funktionalität anwendungsweit bereitgestellt wird.
-\index{Dienst}
-\index{Registry|see{Service Registry}}
-\index{Service Registry}
-\index{Service}
-% OSGi Framework = OSGi Service Platform without OSGi Standard Services 13
-\citep{wtherich_die_2008}
+
+\input{chapters/sections/subsections/subsubsections/paragraphs/bundles}
+\input{chapters/sections/subsections/subsubsections/paragraphs/services}
 
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[scale=1.3]{pics/osgi_layer.png}
-	\caption[OSGi layers]{
-	\textbf{OSGi layers.}
-	something}
+	\caption[OSGi Schichtenmodel]{
+	\textbf{OSGi Schichtenmodel}
+	}
 	\end{center}
 	\label{fig:osgi_layer}
 \end{figure}
 
-\input{chapters/sections/subsections/subsubsections/paragraphs/bundles}
-\input{chapters/sections/subsections/subsubsections/paragraphs/services}
+Die serviceorientierte Architektur der Pipeline wird also durch das
+\name{OSGi Framework} diktiert und stellt somit die unterste Schicht der
+Architekturabstraktion der Pipeline dar.
+
